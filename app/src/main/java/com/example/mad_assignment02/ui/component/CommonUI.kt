@@ -18,3 +18,7 @@ class CommonUI {
     }
 
 }
+@Composable
+fun FormattedPriceLabel(unformattedprice: Double, modifier: Modifier = Modifier) {
+    Text(text = "£${unformattedprice}")
+}
