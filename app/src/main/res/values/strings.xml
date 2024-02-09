@@ -36,4 +36,15 @@
     <string name="Sauce_12">Pico de gallo</string>
     <string name="Sauce_13">Chipotle aioli</string>
     <string name="Sauce_14">Lime-cilantro crema</string>
+
+    <string name="Salad_01">Avocado slices</string>
+    <string name="Salad_02">Shredded lettuce</string>
+    <string name="Salad_03">Shredded purple cabbage</string>
+    <string name="Salad_04">Thai peanut slaw</string>
+    <string name="Salad_05">Cucumber ribbons</string>
+    <string name="Salad_06">Diced tomatoes</string>
+    <string name="Salad_07">Kalamata olives</string>
+    <string name="Salad_08">Celery slaw</string>
+    <string name="Salad_09">Corn</string>
+    <string name="Salad_10">Spinach</string>
 </resources>
