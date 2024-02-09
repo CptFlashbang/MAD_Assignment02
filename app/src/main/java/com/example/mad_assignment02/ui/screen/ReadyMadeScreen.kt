@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.example.mad_assignment02.ui.screen
 
 import androidx.compose.foundation.lazy.LazyColumn
