@@ -21,4 +21,19 @@
     <string name="Additional_Filling_06">Coconut-lime rice</string>
     <string name="Additional_Filling_07">Grilled peppers and onions</string>
     <string name="Additional_Filling_08">Crumbled blue cheese</string>
+
+    <string name="Sauce_01">Mango salsa</string>
+    <string name="Sauce_02">Roasted corn and black bean salsa</string>
+    <string name="Sauce_03">Spicy mango-habanero sauce</string>
+    <string name="Sauce_04">Creamy cilantro-lime dressing</string>
+    <string name="Sauce_05">Guacamole</string>
+    <string name="Sauce_06">Lime juice</string>
+    <string name="Sauce_07">Spicy sriracha-peanut sauce</string>
+    <string name="Sauce_08">Tzatziki</string>
+    <string name="Sauce_09">Pineapple salsa</string>
+    <string name="Sauce_10">Teriyaki glaze</string>
+    <string name="Sauce_11">Creamy buffalo-ranch sauce</string>
+    <string name="Sauce_12">Pico de gallo</string>
+    <string name="Sauce_13">Chipotle aioli</string>
+    <string name="Sauce_14">Lime-cilantro crema</string>
 </resources>
