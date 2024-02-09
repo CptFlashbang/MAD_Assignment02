@@ -13,26 +13,26 @@ import androidx.compose.ui.res.painterResource
 import com.example.mad_assignment02.R
 
 class NavBar {
-    @Composable
-    fun BottomNavBar(){
-        var selectedItem by remember { mutableStateOf(0) }
-        val items: List<Pair<String, Painter>> = listOf(
-            "Home" to painterResource(id = R.drawable.home_fill0_wght400_grad0_opsz24),
-            "Ready-made" to painterResource(id = R.drawable.fastfood_fill0_wght400_grad0_opsz24),
-            "Custom" to painterResource(id = R.drawable.build_fill0_wght400_grad0_opsz24),
-            "Orders" to painterResource(id = R.drawable.assignment_fill0_wght400_grad0_opsz24),
-        )
+}
+@Composable
+fun BottomNavBar(){
+    var selectedItem by remember { mutableStateOf(0) }
+    val items: List<Pair<String, Painter>> = listOf(
+        "Home" to painterResource(id = R.drawable.home_fill0_wght400_grad0_opsz24),
+        "Ready-made" to painterResource(id = R.drawable.fastfood_fill0_wght400_grad0_opsz24),
+        "Custom" to painterResource(id = R.drawable.build_fill0_wght400_grad0_opsz24),
+        "Orders" to painterResource(id = R.drawable.assignment_fill0_wght400_grad0_opsz24),
+    )
 
-        androidx.compose.material3.NavigationBar {
-            items.forEachIndexed { index, (label, painter) ->
-                NavigationBarItem(
-                    icon = { Icon(painter, contentDescription = label) },
-                    label = { Text(label) },
-                    selected = selectedItem == index,
-                    onClick = { selectedItem = index }
-                )
+    androidx.compose.material3.NavigationBar {
+        items.forEachIndexed { index, (label, painter) ->
+            NavigationBarItem(
+                icon = { Icon(painter, contentDescription = label) },
+                label = { Text(label) },
+                selected = selectedItem == index,
+                onClick = { selectedItem = index }
+            )
 
-            }
         }
     }
 }
