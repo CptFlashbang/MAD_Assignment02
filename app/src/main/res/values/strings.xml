@@ -14,6 +14,17 @@
     <string name="Pre_Made_09">Mediterranean Lamb Delight</string>
     <string name="Pre_Made_10">Sweet Potato and Black Bean</string>
 
+    <string name="Pre_Made_01_Description">Pre_Made_01_Description</string>
+    <string name="Pre_Made_02_Description">Pre_Made_02_Description</string>
+    <string name="Pre_Made_03_Description">Pre_Made_03_Description</string>
+    <string name="Pre_Made_04_Description">Pre_Made_04_Description</string>
+    <string name="Pre_Made_05_Description">Pre_Made_05_Description</string>
+    <string name="Pre_Made_06_Description">Pre_Made_06_Description</string>
+    <string name="Pre_Made_07_Description">Pre_Made_07_Description</string>
+    <string name="Pre_Made_08_Description">Pre_Made_08_Description</string>
+    <string name="Pre_Made_09_Description">Pre_Made_09_Description</string>
+    <string name="Pre_Made_10_Description">Pre_Made_10_Description</string>
+
     <string name="Main_Filling_01">Grilled chicken marinated in a zesty mango-chipotle glaze</string>
     <string name="Main_Filling_02">Sliced and seared chipotle-seasoned flank steak</string>
     <string name="Main_Filling_03">Spiced and grilled jackfruit</string>
