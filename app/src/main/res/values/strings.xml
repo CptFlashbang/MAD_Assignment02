@@ -2,4 +2,14 @@
     <string name="app_name">MAD_Assignment02</string>
     <string name="subtotal_price">Subtotal %s</string>
     <string name="total_price">Total %s</string>
+    <string name="Main_Filling_01">Grilled chicken marinated in a zesty mango-chipotle glaze</string>
+    <string name="Main_Filling_02">Sliced and seared chipotle-seasoned flank steak</string>
+    <string name="Main_Filling_03">Spiced and grilled jackfruit</string>
+    <string name="Main_Filling_04">Stir-fried shrimp with Thai basil and lemongrass</string>
+    <string name="Main_Filling_05">Roasted chickpeas seasoned with Mediterranean spices</string>
+    <string name="Main_Filling_06">Slow-cooked Kalua pork with pineapple and ginger</string>
+    <string name="Main_Filling_07">Shredded buffalo chicken with a hint of blue cheese</string>
+    <string name="Main_Filling_08">Smoked and shredded brisket with a smoky barbecue rub</string>
+    <string name="Main_Filling_09">Grilled and seasoned lamb slices</string>
+    <string name="Main_Filling_10">Roasted sweet potato and black bean mash</string>
 </resources>
