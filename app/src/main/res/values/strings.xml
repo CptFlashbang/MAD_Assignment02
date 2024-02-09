@@ -2,6 +2,18 @@
     <string name="app_name">MAD_Assignment02</string>
     <string name="subtotal_price">Subtotal %s</string>
     <string name="total_price">Total %s</string>
+
+    <string name="Pre_Made_01">Mango Tango</string>
+    <string name="Pre_Made_02">Sizzling Southwest Steak</string>
+    <string name="Pre_Made_03">Vegan Fiesta</string>
+    <string name="Pre_Made_04">Thai-inspired Shrimp</string>
+    <string name="Pre_Made_05">Mediterranean Chickpea</string>
+    <string name="Pre_Made_06">Hawaiian Luau Pork</string>
+    <string name="Pre_Made_07">Buffalo Chicken Blue Cheese</string>
+    <string name="Pre_Made_08">Tex-Mex Brisket Bonanza</string>
+    <string name="Pre_Made_09">Mediterranean Lamb Delight</string>
+    <string name="Pre_Made_10">Sweet Potato and Black Bean</string>
+
     <string name="Main_Filling_01">Grilled chicken marinated in a zesty mango-chipotle glaze</string>
     <string name="Main_Filling_02">Sliced and seared chipotle-seasoned flank steak</string>
     <string name="Main_Filling_03">Spiced and grilled jackfruit</string>
