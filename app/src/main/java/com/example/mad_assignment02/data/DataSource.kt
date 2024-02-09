@@ -63,6 +63,5 @@ data class Burrito(
                 salads
             )
         }
-        }
     }
 }
