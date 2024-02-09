@@ -26,7 +26,7 @@ class ReadyMadeScreen {
     }
     @Composable
     fun ReadyMadeList() {
-        val readyMadeBurritos = Datasource().loadReadyMade()
+        val readyMadeBurritos = DataSource.loadReadyMade()
 
         LazyColumn {
             items(readyMadeBurritos.size) { index ->
