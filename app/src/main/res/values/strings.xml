@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MAD_Assignment02</string>
     <string name="subtotal_price">Subtotal %s</string>
+    <string name="total_price">Total %s</string>
 </resources>
