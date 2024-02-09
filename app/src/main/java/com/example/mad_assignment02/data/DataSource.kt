@@ -16,7 +16,6 @@ object DataSource {
         R.string.Main_Filling_09,
         R.string.Main_Filling_10,
     )
-
 }
 data class Burrito(
     @StringRes val title: Int,
@@ -26,4 +25,27 @@ data class Burrito(
     val additionalFillings: List<Int>,
     val sauces: List<Int>,
     val salads: List<Int>
-)
+){
+    companion object {
+        fun createReadyMade(
+            @StringRes title: Int,
+            @StringRes description: Int,
+            price: Double,
+            mainFilling: Int,
+            additionalFillings: List<Int>,
+            sauces: List<Int>,
+            salads: List<Int>
+        ): Burrito {
+            return Burrito(
+                title,
+                description,
+                price,
+                mainFilling,
+                additionalFillings,
+                sauces,
+                salads
+            )
+        }
+        }
+    }
+}
