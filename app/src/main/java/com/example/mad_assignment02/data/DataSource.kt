@@ -1,5 +1,6 @@
 package com.example.mad_assignment02.data
 
+import androidx.annotation.StringRes
 import com.example.mad_assignment02.R
 
 object DataSource {
@@ -17,3 +18,12 @@ object DataSource {
     )
 
 }
+data class Burrito(
+    @StringRes val title: Int,
+    @StringRes val description: Int,
+    val price: Double,
+    val mainFilling: Int,
+    val additionalFillings: List<Int>,
+    val sauces: List<Int>,
+    val salads: List<Int>
+)
