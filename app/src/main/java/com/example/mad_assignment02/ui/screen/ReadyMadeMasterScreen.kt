@@ -22,7 +22,7 @@ import com.example.mad_assignment02.data.DataSource
 import com.example.mad_assignment02.ui.component.BottomNavBar
 import com.example.mad_assignment02.ui.component.FormattedPriceLabel
 
-class ReadyMadeScreen {
+class ReadyMadeMasterScreen {
 
 }
 
