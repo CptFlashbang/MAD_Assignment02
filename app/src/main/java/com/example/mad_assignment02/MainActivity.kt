@@ -10,8 +10,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.mad_assignment02.ui.screen.ReadyMadeScreen
-import com.example.mad_assignment02.ui.screen.Ready_Made_Burrito
+import com.example.mad_assignment02.ui.screen.ReadyMadeMasterScreen
+import com.example.mad_assignment02.ui.screen.Ready_Made_Master_Screen
 import com.example.mad_assignment02.ui.theme.MAD_Assignment02Theme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Ready_Made_Burrito()
+                    Ready_Made_Master_Screen()
                 }
             }
         }

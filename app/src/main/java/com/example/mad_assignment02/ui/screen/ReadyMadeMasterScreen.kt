@@ -51,7 +51,7 @@ fun ReadyMadeList() {
     }
 }
 @Composable
-fun Ready_Made_Burrito(){
+fun Ready_Made_Master_Screen(){
     Scaffold(
         bottomBar = {
             BottomAppBar(
