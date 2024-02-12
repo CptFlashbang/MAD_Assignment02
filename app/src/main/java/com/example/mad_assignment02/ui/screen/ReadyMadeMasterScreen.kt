@@ -44,12 +44,12 @@ fun Ready_Made_List_Item(burritoInstance: BurritoClass, clickAction: (BurritoCla
         )
 }
 @Composable
-fun ReadyMadeList() {
-    val readyMadeBurritos = DataSource.loadReadyMade()
-
+fun ReadyMadeList(readyMadeBurritos:List<BurritoClass>, navController: NavHostController) {
     LazyColumn {
-        items(readyMadeBurritos.size) { index ->
-            Ready_Made_List_Item(readyMadeBurritos[index])
+        items(readyMadeBurritos) { burrito ->
+            Ready_Made_List_Item(burrito){
+                navController.navigate("ReadyMadeBurritos/${it.id}")
+            }
             Divider()
         }
     }
