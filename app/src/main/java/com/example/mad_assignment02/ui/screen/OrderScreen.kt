@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.mad_assignment02.ui.component.BottomNavBar
 
 class OrderScreen {
@@ -19,12 +20,7 @@ class OrderScreen {
 @Composable
 fun Order_Screen(){
     Scaffold(
-        bottomBar = {
-            BottomAppBar(
-            ) {
-                BottomNavBar()
-            }
-        },
+
     ) { innerPadding ->
         Column(
             modifier = Modifier

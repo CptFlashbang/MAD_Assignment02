@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
 
 package com.example.mad_assignment02.ui.screen
 
@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.mad_assignment02.ui.component.BottomNavBar
 
 class ReadyMadeDetailScreen {
@@ -19,12 +20,6 @@ class ReadyMadeDetailScreen {
 @Composable
 fun Ready_Made_Detail_Screen(){
     Scaffold(
-        bottomBar = {
-            BottomAppBar(
-            ) {
-                BottomNavBar()
-            }
-        },
     ) { innerPadding ->
         Column(
             modifier = Modifier
