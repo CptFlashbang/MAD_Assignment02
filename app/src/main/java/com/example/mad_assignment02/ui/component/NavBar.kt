@@ -32,7 +32,15 @@ fun BottomNavBar(navController: NavHostController){
                 icon = { Icon(painter, contentDescription = label) },
                 label = { Text(label) },
                 selected = selectedItem == index,
-                onClick = { selectedItem = index }
+                onClick = {
+                    selectedItem = index
+                    when (index) {
+                        0 -> navController.navigate(BurritoScreen.Home.name)
+                        1 -> navController.navigate(BurritoScreen.ReadyMadeMaster.name)
+                        2 -> navController.navigate(BurritoScreen.Custom.name)
+                        3 -> navController.navigate(BurritoScreen.Order.name)
+                    }
+                }
             )
 
         }
