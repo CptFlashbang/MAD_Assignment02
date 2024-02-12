@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
 
 package com.example.mad_assignment02
 
@@ -59,23 +59,6 @@ fun BurritoApp(
     navController: NavHostController = rememberNavController()
 ) {
     Scaffold(
-        topBar = {
-            TopAppBar(
-                navigationIcon = {
-                    IconButton(
-                        onClick = { /* TODO */ }
-                    ) {
-                        Icon(
-                            imageVector = Icons.Outlined.ArrowBack,
-                            contentDescription = "Back"
-                        )
-                    }
-                },
-                title = {
-                    Text("Top app bar")
-                }
-            )
-        },
         bottomBar = {
             BottomAppBar(
             ) {
