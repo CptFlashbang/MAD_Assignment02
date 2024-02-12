@@ -77,6 +77,22 @@ fun BurritoApp(
             composable(route = BurritoScreen.ReadyMadeMaster.name) {
                 Ready_Made_Master_Screen(navController)
             }
+            composable(
+                //userId is placeholder for profileDetails composable
+                route = "ReadyMadeBurritos/{id}",
+
+                //arguments accepts list of objects created by navArgument()
+                arguments = listOf(navArgument("id") {
+                    type = NavType.IntType
+                })
+            )
+            { navBackStackEntry ->
+                Ready_Made_Detail_Screen(
+                    //navBackStackEntry used to extract userId from route
+                    navBackStackEntry.arguments!!.getInt("id"), navController
+                )
+            }
+
             composable(route = BurritoScreen.Custom.name) {
                 Custom_Screen()
             }
