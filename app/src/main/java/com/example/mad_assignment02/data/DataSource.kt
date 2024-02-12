@@ -120,8 +120,8 @@ object DataSource {
             )
         )
     }
-}
-data class Burrito(
+data class BurritoClass(
+    val id: Int,
     @StringRes val title: Int,
     @StringRes val description: Int,
     val price: Double,
@@ -140,8 +140,9 @@ data class Burrito(
             additionalFillings: List<Int>,
             sauces: List<Int>,
             salads: List<Int>
-        ): Burrito {
-            return Burrito(
+        ): BurritoClass {
+            return BurritoClass(
+                id,
                 title,
                 description,
                 price,
@@ -159,8 +160,9 @@ data class Burrito(
             additionalFillings: List<Int>,
             sauces: List<Int>,
             salads: List<Int>
-        ): Burrito {
-            return Burrito(
+        ): BurritoClass {
+            return BurritoClass(
+                id,
                 title = 0, // placeholder default value necessary for custom
                 description = 0, // placeholder default value necessary for custom
                 price,
