@@ -20,12 +20,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.mad_assignment02.data.Burrito
+import com.example.mad_assignment02.data.DataSource.ReadyMadeBurritos
 import com.example.mad_assignment02.ui.component.BottomNavBar
 
 class ReadyMadeDetailScreen {
 }
 @Composable
-fun Ready_Made_Detail_Screen(burrito: Burrito){
+fun Ready_Made_Detail_Screen(burritoId: Int, navHostController: NavHostController){
+    val burrito = ReadyMadeBurritos.first { burrito ->
+        burrito.id == burritoId
+    }
     Scaffold(
         topBar = {
             TopAppBar(
