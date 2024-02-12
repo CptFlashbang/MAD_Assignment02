@@ -10,12 +10,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
+import androidx.navigation.NavHostController
+import com.example.mad_assignment02.BurritoScreen
 import com.example.mad_assignment02.R
 
 class NavBar {
 }
 @Composable
-fun BottomNavBar(){
+fun BottomNavBar(navController: NavHostController){
     var selectedItem by remember { mutableStateOf(0) }
     val items: List<Pair<String, Painter>> = listOf(
         "Home" to painterResource(id = R.drawable.home_fill0_wght400_grad0_opsz24),
