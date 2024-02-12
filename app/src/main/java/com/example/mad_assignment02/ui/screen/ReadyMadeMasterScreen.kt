@@ -55,7 +55,7 @@ fun ReadyMadeList(readyMadeBurritos:List<BurritoClass>, navController: NavHostCo
     }
 }
 @Composable
-fun Ready_Made_Master_Screen(){
+fun Ready_Made_Master_Screen(navController: NavHostController){
     Scaffold(
     ) { innerPadding ->
         Column(
@@ -63,7 +63,7 @@ fun Ready_Made_Master_Screen(){
                 .padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            ReadyMadeList()
+            ReadyMadeList(ReadyMadeBurritos, navController)
         }
     }
 }
