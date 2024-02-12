@@ -75,7 +75,7 @@ fun BurritoApp(
                 Home_Screen()
             }
             composable(route = BurritoScreen.ReadyMadeMaster.name) {
-                Ready_Made_Master_Screen()
+                Ready_Made_Master_Screen(navController)
             }
             composable(route = BurritoScreen.Custom.name) {
                 Custom_Screen()
