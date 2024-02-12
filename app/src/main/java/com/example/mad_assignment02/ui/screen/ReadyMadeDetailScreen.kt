@@ -11,14 +11,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.mad_assignment02.data.Burrito
 import com.example.mad_assignment02.ui.component.BottomNavBar
 
 class ReadyMadeDetailScreen {
 }
 @Composable
-fun Ready_Made_Detail_Screen(){
+fun Ready_Made_Detail_Screen(burrito: Burrito){
     Scaffold(
     ) { innerPadding ->
         Column(
@@ -26,7 +28,13 @@ fun Ready_Made_Detail_Screen(){
                 .padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Text(text = "Ready_Made_Detail_Screen")
+            Text(text = stringResource(id = burrito.title))
+            Text(text = stringResource(id = burrito.description))
+            Text(text = "Price: ${burrito.price}")
+            Text(text = "Main Filling: ${burrito.mainFilling}")
+            Text(text = "Additional Fillings: ${burrito.additionalFillings.joinToString(", ")}")
+            Text(text = "Sauces: ${burrito.sauces.joinToString(", ")}")
+            Text(text = "Salads: ${burrito.salads.joinToString(", ")}")
         }
     }
 }
