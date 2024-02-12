@@ -17,6 +17,23 @@ import com.example.mad_assignment02.ui.component.BottomNavBar
 
 class CustomScreen {
 }
+
+@Preview
+@Composable
+fun CustomScreenPreview() {
+    Main_Fillings()
+}
+
+@Composable
+fun Main_Fillings(){
+    androidx.compose.material3.ListItem(
+        headlineText = { /*TODO*/ }
+    )
+
+
+}
+
+
 @Composable
 fun Custom_Screen(){
     Scaffold(
