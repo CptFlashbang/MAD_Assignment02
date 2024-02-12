@@ -21,13 +21,17 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.example.mad_assignment02.data.DataSource.ReadyMadeBurritos
 import com.example.mad_assignment02.ui.component.BottomNavBar
 import com.example.mad_assignment02.ui.screen.Custom_Screen
 import com.example.mad_assignment02.ui.screen.Home_Screen
 import com.example.mad_assignment02.ui.screen.Order_Screen
+import com.example.mad_assignment02.ui.screen.Ready_Made_Detail_Screen
 import com.example.mad_assignment02.ui.screen.Ready_Made_Master_Screen
 import com.example.mad_assignment02.ui.theme.MAD_Assignment02Theme
 
