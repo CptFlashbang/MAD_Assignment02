@@ -29,16 +29,19 @@ class ReadyMadeMasterScreen {
 }
 
 @Composable
-fun Ready_Made_List_Item(burrito: Burrito) {
+fun Ready_Made_List_Item(burritoInstance: BurritoClass, clickAction: (BurritoClass) -> Unit) {
     androidx.compose.material3.ListItem(
         headlineText = {
-            Text(text = stringResource(burrito.title))
+            Text(text = stringResource(burritoInstance.title))
         },
         supportingText = {
-            Text(text = stringResource(burrito.mainFilling))
+            Text(text = stringResource(burritoInstance.mainFilling))
         },
-        trailingContent = { FormattedPriceLabel(burrito.price) }
-    )
+        trailingContent = { FormattedPriceLabel(burritoInstance.price)
+        },
+        modifier = Modifier
+            .clickable { clickAction(burritoInstance) },
+        )
 }
 @Composable
 fun ReadyMadeList() {
