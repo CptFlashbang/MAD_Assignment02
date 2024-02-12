@@ -31,6 +31,13 @@ import com.example.mad_assignment02.ui.screen.Order_Screen
 import com.example.mad_assignment02.ui.screen.Ready_Made_Master_Screen
 import com.example.mad_assignment02.ui.theme.MAD_Assignment02Theme
 
+
+enum class BurritoScreen() {
+    Home,
+    ReadyMadeMaster,
+    Custom,
+    Order
+}
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
