@@ -20,8 +20,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.mad_assignment02.data.DataSource.ReadyMadeBurritos
 
-class ReadyMadeDetailScreen {
-}
 @Composable
 fun Ready_Made_Detail_Screen(burritoId: Int, navHostController: NavHostController){
     val burrito = ReadyMadeBurritos.first { burrito ->
