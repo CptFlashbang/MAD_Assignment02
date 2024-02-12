@@ -48,10 +48,60 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Ready_Made_Master_Screen()
+                    BurritoApp()
                 }
             }
         }
     }
 }
+@Composable
+fun BurritoApp(
+    navController: NavHostController = rememberNavController()
+) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                navigationIcon = {
+                    IconButton(
+                        onClick = { /* TODO */ }
+                    ) {
+                        Icon(
+                            imageVector = Icons.Outlined.ArrowBack,
+                            contentDescription = "Back"
+                        )
+                    }
+                },
+                title = {
+                    Text("Top app bar")
+                }
+            )
+        },
+        bottomBar = {
+            BottomAppBar(
+            ) {
+                BottomNavBar(navController)
+            }
+        },
+    ) { innerPadding ->
+        NavHost(
+            navController = navController,
+            startDestination = BurritoScreen.ReadyMadeMaster.name,
+            modifier = Modifier.padding(innerPadding)
+        ) {
+            composable(route = BurritoScreen.Home.name) {
+                Home_Screen()
+            }
+            composable(route = BurritoScreen.ReadyMadeMaster.name) {
+                Ready_Made_Master_Screen()
+            }
+            composable(route = BurritoScreen.Custom.name) {
+                Custom_Screen()
+            }
+            composable(route = BurritoScreen.Order.name) {
+                Order_Screen()
+            }
+        }
+    }
+}
+
 
