@@ -85,7 +85,7 @@ fun BurritoApp(
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = BurritoScreen.ReadyMadeMaster.name,
+            startDestination = BurritoScreen.Home.name,
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(route = BurritoScreen.Home.name) {
