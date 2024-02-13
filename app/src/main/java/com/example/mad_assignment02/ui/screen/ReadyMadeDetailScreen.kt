@@ -34,7 +34,7 @@ fun Ready_Made_Detail_Screen(
             TopAppBar(
                 navigationIcon = {
                     IconButton(
-                        onClick = { /* TODO */ }
+                        onClick = navigateUp
                     ) {
                         Icon(
                             imageVector = Icons.Outlined.ArrowBack,
@@ -53,13 +53,27 @@ fun Ready_Made_Detail_Screen(
                 .padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Text(text = stringResource(id = burrito.title))
-            Text(text = stringResource(id = burrito.description))
+            Text(text = stringResource(burrito.description))
             Text(text = "Price: ${burrito.price}")
-            Text(text = "Main Filling: ${burrito.mainFilling}")
-            Text(text = "Additional Fillings: ${burrito.additionalFillings.joinToString(", ")}")
-            Text(text = "Sauces: ${burrito.sauces.joinToString(", ")}")
-            Text(text = "Salads: ${burrito.salads.joinToString(", ")}")
+            Text(text = "Main Filling: " + stringResource(burrito.mainFilling))
+
+            // Additional Fillings
+            Text(text = "Additional Fillings: ")
+            burrito.additionalFillings.forEach { filling ->
+                Text(text = stringResource(filling))
+            }
+
+            // Sauces
+            Text(text = "Sauces: ")
+            burrito.sauces.forEach { sauce ->
+                Text(text = stringResource(sauce))
+            }
+
+            // Salads
+            Text(text = "Salads: ")
+            burrito.salads.forEach { salad ->
+                Text(text = stringResource(salad))
+            }
         }
     }
 }
