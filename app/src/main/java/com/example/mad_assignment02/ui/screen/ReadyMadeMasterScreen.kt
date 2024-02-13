@@ -35,7 +35,7 @@ fun Ready_Made_List_Item(burritoInstance: BurritoClass, clickAction: (BurritoCla
             Text(text = stringResource(burritoInstance.title))
         },
         supportingText = {
-            Text(text = stringResource(burritoInstance.mainFilling))
+            Text(text = burritoInstance.mainFilling)
         },
         trailingContent = { FormattedPriceLabel(burritoInstance.price)
         },
