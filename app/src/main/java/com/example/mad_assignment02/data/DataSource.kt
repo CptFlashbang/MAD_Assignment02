@@ -162,7 +162,7 @@ object DataSource {
 data class BurritoClass(
     val id: Int,
     @StringRes val title: Int,
-    @StringRes val description: Int,
+    @StringRes val description: Int?,
     val price: Double,
     val mainFilling: Int,
     val additionalFillings: List<Int>,
