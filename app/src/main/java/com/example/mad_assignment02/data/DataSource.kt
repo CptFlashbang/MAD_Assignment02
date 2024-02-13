@@ -164,52 +164,8 @@ data class BurritoClass(
     @StringRes val title: Int,
     @StringRes val description: Int?,
     val price: Double,
-    val mainFilling: Int,
-    val additionalFillings: List<Int>,
-    val sauces: List<Int>,
-    val salads: List<Int>
-) {
-    companion object {
-        fun createReadyMade(
-            id: Int,
-            @StringRes title: Int,
-            @StringRes description: Int,
-            price: Double,
-            mainFilling: Int,
-            additionalFillings: List<Int>,
-            sauces: List<Int>,
-            salads: List<Int>
-        ): BurritoClass {
-            return BurritoClass(
-                id,
-                title,
-                description,
-                price,
-                mainFilling,
-                additionalFillings,
-                sauces,
-                salads
-            )
-        }
-
-        fun createCustom(
-            id: Int,
-            price: Double,
-            mainFilling: Int,
-            additionalFillings: List<Int>,
-            sauces: List<Int>,
-            salads: List<Int>
-        ): BurritoClass {
-            return BurritoClass(
-                id,
-                title = 0, // placeholder default value necessary for custom
-                description = 0, // placeholder default value necessary for custom
-                price,
-                mainFilling,
-                additionalFillings,
-                sauces,
-                salads
-            )
-        }
-    }
-}
+    val mainFilling: String,
+    val additionalFillings: List<String>,
+    val sauces: List<String>,
+    val salads: List<String>
+)
