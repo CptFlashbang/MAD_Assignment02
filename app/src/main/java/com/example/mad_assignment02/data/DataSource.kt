@@ -27,6 +27,25 @@ object DataSource {
         R.string.Additional_Filling_08,
     )
 
+    val sauces = listOf(
+        R.string.Sauce_01,
+        R.string.Sauce_02,
+        R.string.Sauce_03,
+        R.string.Sauce_04,
+        R.string.Sauce_05,
+        R.string.Sauce_06,
+        R.string.Sauce_07,
+        R.string.Sauce_08,
+        R.string.Sauce_09,
+        R.string.Sauce_10,
+        R.string.Sauce_11,
+        R.string.Sauce_12,
+        R.string.Sauce_13,
+        R.string.Sauce_14,
+    )
+
+
+
     val ReadyMadeBurritos = arrayListOf(
             BurritoClass.createReadyMade(
                 1,
