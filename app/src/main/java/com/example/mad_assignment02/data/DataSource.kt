@@ -26,6 +26,22 @@ object DataSource {
         "GrilledPeppersOnions" to R.string.Additional_Filling_07,
         "BlueCheese" to R.string.Additional_Filling_08
     )
+    val sauces = mapOf(
+        "MangoSalsa" to R.string.Sauce_01,
+        "CornBeanSalsa" to R.string.Sauce_02,
+        "MangoHabanero" to R.string.Sauce_03,
+        "CilantroLimeDressing" to R.string.Sauce_04,
+        "Guacamole" to R.string.Sauce_05,
+        "LimeJuice" to R.string.Sauce_06,
+        "SrirachaPeanut" to R.string.Sauce_07,
+        "Tzatziki" to R.string.Sauce_08,
+        "PineappleSalsa" to R.string.Sauce_09,
+        "TeriyakiGlaze" to R.string.Sauce_10,
+        "BuffaloRanch" to R.string.Sauce_11,
+        "PicoDeGallo" to R.string.Sauce_12,
+        "ChipotleAioli" to R.string.Sauce_13,
+        "CilantroCrema" to R.string.Sauce_14
+    )
 
     val ReadyMadeBurritos = arrayListOf(
             BurritoClass.createReadyMade(
