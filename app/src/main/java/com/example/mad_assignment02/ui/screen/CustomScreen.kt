@@ -39,15 +39,7 @@ fun Main_Filling(){
 @Composable
 fun Main_Fillings_List(){
     androidx.compose.material3.ListItem(
-        leadingContent = {
-            RadioButton(
-                selected = selectedValue == item,
-                onClick = {
-                    selectedValue = item
-                    onSelectionChanged(item)
-                }
 
-        },
         headlineText = { /*TODO*/ }
     )
 
