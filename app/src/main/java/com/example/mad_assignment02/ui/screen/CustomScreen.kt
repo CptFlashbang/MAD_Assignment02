@@ -28,12 +28,18 @@ fun CustomScreenPreview() {
 }
 
 @Composable
-fun Main_Filling(){
-    androidx.compose.material3.ListItem(
+fun MainFillingListItem(fillingText: String, isSelected: Boolean, onSelect: () -> Unit) {
+    ListItem(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onSelect),
         leadingContent = {
-
+            RadioButton(
+                selected = isSelected,
+                onClick = onSelect
+            )
         },
-        headlineText = { /*TODO*/ }
+        headlineText = { Text(fillingText) }
     )
 }
 @Composable
