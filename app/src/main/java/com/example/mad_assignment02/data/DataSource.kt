@@ -4,7 +4,18 @@ import androidx.annotation.StringRes
 import com.example.mad_assignment02.R
 
 object DataSource {
-
+    val mainFillings = mapOf(
+        "GrilledChicken" to R.string.Main_Filling_01,
+        "ChipotleSteak" to R.string.Main_Filling_02,
+        "Jackfruit" to R.string.Main_Filling_03,
+        "Shrimp" to R.string.Main_Filling_04,
+        "Chickpeas" to R.string.Main_Filling_05,
+        "KaluaPork" to R.string.Main_Filling_06,
+        "BuffaloChicken" to R.string.Main_Filling_07,
+        "Brisket" to R.string.Main_Filling_08,
+        "Lamb" to R.string.Main_Filling_09,
+        "SweetPotato" to R.string.Main_Filling_10
+    )
 
     val ReadyMadeBurritos = arrayListOf(
             BurritoClass.createReadyMade(
