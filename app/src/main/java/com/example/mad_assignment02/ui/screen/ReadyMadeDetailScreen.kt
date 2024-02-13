@@ -21,7 +21,11 @@ import androidx.navigation.NavHostController
 import com.example.mad_assignment02.data.DataSource.ReadyMadeBurritos
 
 @Composable
-fun Ready_Made_Detail_Screen(burritoId: Int, navHostController: NavHostController){
+fun Ready_Made_Detail_Screen(
+    burritoId: Int,
+    navHostController: NavHostController,
+    navigateUp: () -> Unit = {},
+    ){
     val burrito = ReadyMadeBurritos.first { burrito ->
         burrito.id == burritoId
     }
