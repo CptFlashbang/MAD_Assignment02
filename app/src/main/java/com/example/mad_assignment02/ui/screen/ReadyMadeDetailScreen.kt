@@ -1,4 +1,6 @@
-@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class,
+    ExperimentalMaterial3Api::class
+)
 
 package com.example.mad_assignment02.ui.screen
 
@@ -49,13 +51,13 @@ fun Ready_Made_Detail_Screen(burritoId: Int, navHostController: NavHostControlle
                 .padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Text(text = stringResource(id = burrito.title))
-            Text(text = stringResource(id = burrito.description))
-            Text(text = "Price: ${burrito.price}")
-            Text(text = "Main Filling: ${burrito.mainFilling}")
-            Text(text = "Additional Fillings: ${burrito.additionalFillings.joinToString(", ")}")
-            Text(text = "Sauces: ${burrito.sauces.joinToString(", ")}")
-            Text(text = "Salads: ${burrito.salads.joinToString(", ")}")
+//            Text(text = stringResource(id = burrito.title))
+//            Text(text = stringResource(id = burrito.description))
+//            Text(text = "Price: ${burrito.price}")
+//            Text(text = "Main Filling: ${burrito.mainFilling}")
+//            Text(text = "Additional Fillings: ${burrito.additionalFillings.joinToString(", ")}")
+//            Text(text = "Sauces: ${burrito.sauces.joinToString(", ")}")
+//            Text(text = "Salads: ${burrito.salads.joinToString(", ")}")
         }
     }
 }
