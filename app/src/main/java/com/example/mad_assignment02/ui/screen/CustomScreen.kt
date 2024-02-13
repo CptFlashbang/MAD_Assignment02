@@ -113,27 +113,6 @@ fun FillingsList(fillings: List<Int>, selectedFillings: MutableSet<Int>) {
     }
 }
 @Composable
-//fun Custom_Screen(){
-//    val selectedMainFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
-//    val selectedAdditionalFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
-//    val selectedSauces = remember { mutableStateOf(mutableSetOf<Int>()) }
-//    val selectedSalads = remember { mutableStateOf(mutableSetOf<Int>()) }
-//
-//    Scaffold { innerPadding ->
-//        Column(
-//            modifier = Modifier
-//                .padding(innerPadding),
-//            verticalArrangement = Arrangement.spacedBy(16.dp),
-//        ) {
-//            // Pass the state and the list to FillingsList
-//            FillingsList(main_fillings, selectedMainFillings.value)
-//            FillingsList(additional_fillings, selectedAdditionalFillings.value)
-//            FillingsList(sauces, selectedSauces.value)
-//            FillingsList(salads, selectedSalads.value)
-//        }
-//    }
-//}
-
 fun Custom_Screen() {
     val selectedMainFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
     val selectedAdditionalFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
