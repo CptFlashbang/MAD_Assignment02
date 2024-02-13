@@ -157,6 +157,7 @@ object DataSource {
             listOf("Avocado")
         )
     )
+}
 
 data class BurritoClass(
     val id: Int,
@@ -168,3 +169,4 @@ data class BurritoClass(
     val sauces: List<String>,
     val salads: List<String>
 )
+{}
