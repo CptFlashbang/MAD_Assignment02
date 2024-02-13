@@ -143,7 +143,7 @@ fun Custom_Screen() {
         LazyColumn(
             modifier = Modifier
                 .padding(innerPadding),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+//            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             // Main Fillings Section
             item { Text("Main Fillings") }
