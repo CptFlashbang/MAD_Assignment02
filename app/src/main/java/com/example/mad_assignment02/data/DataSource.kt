@@ -16,6 +16,16 @@ object DataSource {
         R.string.Main_Filling_09,
         R.string.Main_Filling_10,
     )
+    val additional_fillings = listOf(
+        R.string.Additional_Filling_01,
+        R.string.Additional_Filling_02,
+        R.string.Additional_Filling_03,
+        R.string.Additional_Filling_04,
+        R.string.Additional_Filling_05,
+        R.string.Additional_Filling_06,
+        R.string.Additional_Filling_07,
+        R.string.Additional_Filling_08,
+    )
 
     val ReadyMadeBurritos = arrayListOf(
             BurritoClass.createReadyMade(
