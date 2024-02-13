@@ -16,6 +16,16 @@ object DataSource {
         "Lamb" to R.string.Main_Filling_09,
         "SweetPotato" to R.string.Main_Filling_10
     )
+    val additionalFillings = mapOf(
+        "CilantroRice" to R.string.Additional_Filling_01,
+        "CaramelizedOnions" to R.string.Additional_Filling_02,
+        "Quinoa" to R.string.Additional_Filling_03,
+        "JasmineRice" to R.string.Additional_Filling_04,
+        "FetaCheese" to R.string.Additional_Filling_05,
+        "CoconutLimeRice" to R.string.Additional_Filling_06,
+        "GrilledPeppersOnions" to R.string.Additional_Filling_07,
+        "BlueCheese" to R.string.Additional_Filling_08
+    )
 
     val ReadyMadeBurritos = arrayListOf(
             BurritoClass.createReadyMade(
