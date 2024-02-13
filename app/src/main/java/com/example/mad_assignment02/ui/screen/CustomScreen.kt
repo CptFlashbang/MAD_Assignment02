@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -139,7 +140,15 @@ fun Custom_Screen() {
     val selectedSauces = remember { mutableStateOf(mutableSetOf<Int>()) }
     val selectedSalads = remember { mutableStateOf(mutableSetOf<Int>()) }
 
-    Scaffold { innerPadding ->
+    Scaffold(
+        bottomBar = {
+            Button(onClick = { /* TODO: Add action for button click */ }) {
+                Text("Add to Order")
+            }
+        },
+    )
+    { innerPadding ->
+
         LazyColumn(
             modifier = Modifier
                 .padding(innerPadding),
