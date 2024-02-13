@@ -42,6 +42,18 @@ object DataSource {
         "ChipotleAioli" to R.string.Sauce_13,
         "CilantroCrema" to R.string.Sauce_14
     )
+    val salads = mapOf(
+        "Avocado" to R.string.Salad_01,
+        "ShreddedLettuce" to R.string.Salad_02,
+        "PurpleCabbage" to R.string.Salad_03,
+        "PeanutSlaw" to R.string.Salad_04,
+        "CucumberRibbons" to R.string.Salad_05,
+        "DicedTomatoes" to R.string.Salad_06,
+        "Olives" to R.string.Salad_07,
+        "CelerySlaw" to R.string.Salad_08,
+        "Corn" to R.string.Salad_09,
+        "Spinach" to R.string.Salad_10
+    )
 
     val ReadyMadeBurritos = arrayListOf(
             BurritoClass.createReadyMade(
