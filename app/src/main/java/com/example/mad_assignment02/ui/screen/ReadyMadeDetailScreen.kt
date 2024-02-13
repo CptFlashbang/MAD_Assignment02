@@ -43,7 +43,7 @@ fun Ready_Made_Detail_Screen(
                     }
                 },
                 title = {
-                    Text("Top app bar")
+                    Text(text = stringResource(id = burrito.title))
                 }
             )
         },
