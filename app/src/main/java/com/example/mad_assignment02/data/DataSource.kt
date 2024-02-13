@@ -56,108 +56,107 @@ object DataSource {
     )
 
     val ReadyMadeBurritos = arrayListOf(
-            BurritoClass.createReadyMade(
-                1,
-                R.string.Pre_Made_01,
-                R.string.Pre_Made_01_Description,
-                8.99,
-                R.string.Main_Filling_01,
-                listOf(R.string.Additional_Filling_01),
-                listOf(R.string.Sauce_01, R.string.Sauce_03),
-                listOf(R.string.Salad_01)
-            ),
-            BurritoClass.createReadyMade(
-                2,
-                R.string.Pre_Made_02,
-                R.string.Pre_Made_02_Description,
-                9.99,
-                R.string.Main_Filling_02,
-                listOf(R.string.Additional_Filling_02),
-                listOf(R.string.Sauce_02, R.string.Sauce_04),
-                listOf(R.string.Salad_02)
-            ),
-            BurritoClass.createReadyMade(
-                3,
-                R.string.Pre_Made_03,
-                R.string.Pre_Made_03_Description,
-                7.99,
-                R.string.Main_Filling_03,
-                listOf(R.string.Additional_Filling_03),
-                listOf(R.string.Sauce_02, R.string.Sauce_05, R.string.Sauce_06),
-                listOf(R.string.Salad_03)
-            ),
-            BurritoClass.createReadyMade(
-                4,
-                R.string.Pre_Made_04,
-                R.string.Pre_Made_04_Description,
-                10.99,
-                R.string.Main_Filling_04,
-                listOf(R.string.Additional_Filling_04),
-                listOf(R.string.Sauce_07),
-                listOf(R.string.Salad_04, R.string.Salad_05)
-            ),
-            BurritoClass.createReadyMade(
-                5,
-                R.string.Pre_Made_05,
-                R.string.Pre_Made_05_Description,
-                8.49,
-                R.string.Main_Filling_05,
-                listOf(R.string.Additional_Filling_05),
-                listOf(R.string.Sauce_08),
-                listOf(R.string.Salad_05, R.string.Salad_06, R.string.Salad_07)
-            ),
-            BurritoClass.createReadyMade(
-                6,
-                R.string.Pre_Made_06,
-                R.string.Pre_Made_06_Description,
-                11.49,
-                R.string.Main_Filling_06,
-                listOf(R.string.Additional_Filling_06),
-                listOf(R.string.Sauce_09, R.string.Sauce_10),
-                listOf(R.string.Salad_03)
-            ),
-            BurritoClass.createReadyMade(
-                7,
-                R.string.Pre_Made_07,
-                R.string.Pre_Made_07_Description,
-                9.79,
-                R.string.Main_Filling_07,
-                listOf(R.string.Additional_Filling_08),
-                listOf(R.string.Sauce_11),
-                listOf(R.string.Salad_02, R.string.Salad_06, R.string.Salad_08)
-            ),
-            BurritoClass.createReadyMade(
-                8,
-                R.string.Pre_Made_08,
-                R.string.Pre_Made_08_Description,
-                11.99,
-                R.string.Main_Filling_08,
-                listOf(R.string.Additional_Filling_07),
-                listOf(R.string.Sauce_12, R.string.Sauce_13),
-                listOf(R.string.Salad_09)
-            ),
-            BurritoClass.createReadyMade(
-                9,
-                R.string.Pre_Made_09,
-                R.string.Pre_Made_09_Description,
-                10.49,
-                R.string.Main_Filling_09,
-                listOf(R.string.Additional_Filling_05),
-                listOf(R.string.Sauce_08),
-                listOf(R.string.Salad_06, R.string.Salad_10)
-            ),
-            BurritoClass.createReadyMade(
-                10,
-                R.string.Pre_Made_10,
-                R.string.Pre_Made_10_Description,
-                8.29,
-                R.string.Main_Filling_10,
-                listOf(R.string.Additional_Filling_01),
-                listOf(R.string.Sauce_02, R.string.Sauce_14),
-                listOf(R.string.Salad_01)
-            )
+        BurritoClass(
+            1,
+            R.string.Pre_Made_01,
+            R.string.Pre_Made_01_Description,
+            8.99,
+            "GrilledChicken",
+            listOf("CilantroRice"),
+            listOf("MangoSalsa", "MangoHabanero"),
+            listOf("Avocado")
+        ),
+        BurritoClass(
+            2,
+            R.string.Pre_Made_02,
+            R.string.Pre_Made_02_Description,
+            9.99,
+            "ChipotleSteak",
+            listOf("CaramelizedOnions"),
+            listOf("CornBeanSalsa", "CilantroLimeDressing"),
+            listOf("ShreddedLettuce")
+        ),
+        BurritoClass(
+            3,
+            R.string.Pre_Made_03,
+            R.string.Pre_Made_03_Description,
+            7.99,
+            "Jackfruit",
+            listOf("Quinoa"),
+            listOf("CornBeanSalsa", "Guacamole", "LimeJuice"),
+            listOf("PurpleCabbage")
+        ),
+        BurritoClass(
+            4,
+            R.string.Pre_Made_04,
+            R.string.Pre_Made_04_Description,
+            10.99,
+            "Shrimp",
+            listOf("JasmineRice"),
+            listOf("SrirachaPeanut"),
+            listOf("PeanutSlaw", "CucumberRibbons")
+        ),
+        BurritoClass(
+            5,
+            R.string.Pre_Made_05,
+            R.string.Pre_Made_05_Description,
+            8.49,
+            "Chickpeas",
+            listOf("FetaCheese"),
+            listOf("Tzatziki"),
+            listOf("CucumberRibbons", "DicedTomatoes", "Olives")
+        ),
+        BurritoClass(
+            6,
+            R.string.Pre_Made_06,
+            R.string.Pre_Made_06_Description,
+            11.49,
+            "KaluaPork",
+            listOf("CoconutLimeRice"),
+            listOf("PineappleSalsa", "TeriyakiGlaze"),
+            listOf("PurpleCabbage")
+        ),
+        BurritoClass(
+            7,
+            R.string.Pre_Made_07,
+            R.string.Pre_Made_07_Description,
+            9.79,
+            "BuffaloChicken",
+            listOf("BlueCheese"),
+            listOf("BuffaloRanch"),
+            listOf("ShreddedLettuce", "DicedTomatoes", "CelerySlaw")
+        ),
+        BurritoClass(
+            8,
+            R.string.Pre_Made_08,
+            R.string.Pre_Made_08_Description,
+            11.99,
+            "Brisket",
+            listOf("GrilledPeppersOnions"),
+            listOf("PicoDeGallo", "ChipotleAioli"),
+            listOf("Corn")
+        ),
+        BurritoClass(
+            9,
+            R.string.Pre_Made_09,
+            R.string.Pre_Made_09_Description,
+            10.49,
+            "Lamb",
+            listOf("FetaCheese"),
+            listOf("Tzatziki"),
+            listOf("DicedTomatoes", "Spinach")
+        ),
+        BurritoClass(
+            10,
+            R.string.Pre_Made_10,
+            R.string.Pre_Made_10_Description,
+            8.29,
+            "SweetPotato",
+            listOf("CilantroRice"),
+            listOf("CornBeanSalsa", "CilantroCrema"),
+            listOf("Avocado")
         )
-    }
+    )
 
 data class BurritoClass(
     val id: Int,
