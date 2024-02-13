@@ -44,6 +44,18 @@ object DataSource {
         R.string.Sauce_14,
     )
 
+    val salads = listOf(
+        R.string.Salad_01,
+        R.string.Salad_02,
+        R.string.Salad_03,
+        R.string.Salad_04,
+        R.string.Salad_05,
+        R.string.Salad_06,
+        R.string.Salad_07,
+        R.string.Salad_08,
+        R.string.Salad_09,
+        R.string.Salad_10,
+    )
 
 
     val ReadyMadeBurritos = arrayListOf(
