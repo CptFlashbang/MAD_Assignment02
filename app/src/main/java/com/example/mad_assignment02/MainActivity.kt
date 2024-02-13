@@ -1,4 +1,6 @@
-@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class,
+    ExperimentalMaterial3Api::class
+)
 
 package com.example.mad_assignment02
 
@@ -93,7 +95,9 @@ fun BurritoApp(
             { navBackStackEntry ->
                 Ready_Made_Detail_Screen(
                     //navBackStackEntry used to extract userId from route
-                    navBackStackEntry.arguments!!.getInt("id"), navController
+                    navBackStackEntry.arguments!!.getInt("id"),
+                    navController,
+                    navigateUp = { navController.navigateUp() }
                 )
             }
 
