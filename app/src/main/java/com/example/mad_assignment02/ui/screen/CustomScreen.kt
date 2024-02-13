@@ -43,21 +43,19 @@ fun MainFillingListItem(fillingText: String, isSelected: Boolean, onSelect: () -
     )
 }
 @Composable
-fun Main_Fillings_List(){
-    androidx.compose.material3.ListItem(
-//        leadingContent = {
-//            RadioButton(
-//                selected = selectedValue == item,
-//                onClick = {
-//                    selectedValue = item
-//                    onSelectionChanged(item)
-//                }
-//
-//        },
-        headlineText = { /*TODO*/ }
-    )
+fun MainFillingsList(mainFillings: List<Int>) {
+    var selectedFilling by remember { mutableStateOf(mainFillings.firstOrNull() ?: 0) }
 
-
+    Column {
+        mainFillings.forEach { fillingId ->
+            val fillingText = stringResource(fillingId)
+            MainFillingListItem(
+                fillingText = fillingText,
+                isSelected = fillingId == selectedFilling,
+                onSelect = { selectedFilling = fillingId }
+            )
+        }
+    }
 }
 
 
