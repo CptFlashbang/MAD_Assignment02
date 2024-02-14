@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Tab
@@ -20,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.mad_assignment02.data.BurritoClass
 import com.example.mad_assignment02.ui.component.BottomNavBar
 
 class OrderScreen {
@@ -28,7 +30,7 @@ class OrderScreen {
 @Preview
 @Composable
 fun Order_Screen_Preview() {
-//    TopTabs()
+    OrderDetails()
 }
 @Composable
 fun Order_Screen() {
@@ -43,7 +45,7 @@ fun Order_Screen() {
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             when (selectedTabIndex) {
-                0 -> Text("Content of Tab 1")
+                0 -> OrderDetails()
                 1 -> Text("Content of Tab 2")
                 2 -> Text("Content of Tab 3")
             }
