@@ -69,6 +69,5 @@ fun TopTabs(selectedTabIndex: Int, onSelectTab: (Int) -> Unit) {
             onClick = { onSelectTab(2) },
             text = { Text("Tab 3") }
         )
-
     }
 }
