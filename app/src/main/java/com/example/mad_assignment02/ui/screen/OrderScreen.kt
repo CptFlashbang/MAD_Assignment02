@@ -74,5 +74,21 @@ fun TopTabs(selectedTabIndex: Int, onSelectTab: (Int) -> Unit) {
 
 @Composable
 fun OrderDetails(){
+    Column {
+        Text("Burrito Name")
+        Text("Main Filling:")
+        Text("Grilled chicken marinated in a zesty mango-chipotle glaze.")
+        Divider()
+        Text("Additional Fillings: ")
+        Text("Mango salsa, avocado slices, cilantro-lime rice, and a drizzle of spicy mango-habanero sauce.")
+        Divider()
+        Text("Sauces:")
+        Text("Mango salsa, avocado slices, cilantro-lime rice, and a drizzle of spicy mango-habanero sauce.")
+        Divider()
+        Text("Salads:")
+        Text("Mango salsa, avocado slices, cilantro-lime rice, and a drizzle of spicy mango-habanero sauce.")
+        Divider()
+        Text("£8.99")
+    }
 
 }
