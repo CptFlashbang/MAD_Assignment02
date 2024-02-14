@@ -37,6 +37,11 @@ fun Order_Screen(){
 fun TopTabs(){
     var selectedTabIndex:Int =1
     TabRow(selectedTabIndex) {
+        Tab(
+            selected = (selectedTabIndex == 1),
+            onClick = { selectedTabIndex = 1 },
+            text = { Text("Tab 1") }
+        )
 
     }
 }
