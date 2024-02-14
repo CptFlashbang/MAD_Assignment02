@@ -47,18 +47,18 @@ fun Order_Screen() {
 fun TopTabs(selectedTabIndex: Int, onSelectTab: (Int) -> Unit) {
     TabRow(selectedTabIndex) {
         Tab(
-            selected = (selectedTabIndex == 0),
-            onClick = { selectedTabIndex = 0 },
+            selected = selectedTabIndex == 0,
+            onClick = { onSelectTab(0) },
             text = { Text("Tab 1") }
         )
         Tab(
-            selected = (selectedTabIndex == 1),
-            onClick = { selectedTabIndex = 1 },
+            selected = selectedTabIndex == 1,
+            onClick = { onSelectTab(1) },
             text = { Text("Tab 2") }
         )
         Tab(
-            selected = (selectedTabIndex == 2),
-            onClick = { selectedTabIndex = 2 },
+            selected = selectedTabIndex == 2,
+            onClick = { onSelectTab(2) },
             text = { Text("Tab 3") }
         )
 
