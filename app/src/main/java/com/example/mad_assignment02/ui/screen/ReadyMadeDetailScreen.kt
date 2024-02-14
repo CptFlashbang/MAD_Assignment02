@@ -15,9 +15,12 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.mad_assignment02.R
 import com.example.mad_assignment02.data.DataSource.ReadyMadeBurritos
 
 @Composable
@@ -44,7 +47,21 @@ fun Ready_Made_Detail_Screen(
                 },
                 title = {
                     Text(text = stringResource(id = burrito.title))
-                }
+                },
+                actions = {
+                    IconButton(onClick = { /* Handle navigation icon click */ }) {
+                        Icon(
+                            imageVector = ImageVector.vectorResource(id = R.drawable.add_shopping_cart_fill0_wght400_grad0_opsz24),
+                            contentDescription = "Add to cart action Icon"
+                        )
+                    }
+                    IconButton(onClick = { /* Handle action icon click */ }) {
+                        Icon(
+                            imageVector = ImageVector.vectorResource(id = R.drawable.favorite_fill0_wght400_grad0_opsz24),
+                            contentDescription = "Add to favourite action Icon"
+                        )
+                    }
+                },
             )
         },
     ) { innerPadding ->
