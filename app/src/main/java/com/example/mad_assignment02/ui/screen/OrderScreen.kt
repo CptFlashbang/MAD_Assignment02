@@ -38,7 +38,11 @@ fun Order_Screen() {
                 .padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Text(text = "Order_Screen")
+            when (selectedTabIndex) {
+                0 -> Text("Content of Tab 1")
+                1 -> Text("Content of Tab 2")
+                2 -> Text("Content of Tab 3")
+            }
         }
     }
 }
