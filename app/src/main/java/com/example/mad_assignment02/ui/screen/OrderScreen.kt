@@ -35,7 +35,7 @@ fun Order_Screen(){
 
 @Composable
 fun TopTabs(){
-    var selectedTabIndex:Int =1
+    var selectedTabIndex:Int =0
     TabRow(selectedTabIndex) {
         Tab(
             selected = (selectedTabIndex == 1),
