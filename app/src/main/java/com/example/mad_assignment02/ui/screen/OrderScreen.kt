@@ -31,7 +31,7 @@ fun Order_Screen() {
     var selectedTabIndex by remember { mutableStateOf(0) }
 
     Scaffold(
-
+        topBar = { TopTabs(selectedTabIndex, onSelectTab = { index -> selectedTabIndex = index }) }
     ) { innerPadding ->
         Column(
             modifier = Modifier
@@ -44,8 +44,7 @@ fun Order_Screen() {
 }
 
 @Composable
-fun TopTabs(){
-    var selectedTabIndex:Int =0
+fun TopTabs(selectedTabIndex: Int, onSelectTab: (Int) -> Unit) {
     TabRow(selectedTabIndex) {
         Tab(
             selected = (selectedTabIndex == 0),
