@@ -71,3 +71,8 @@ fun TopTabs(selectedTabIndex: Int, onSelectTab: (Int) -> Unit) {
         )
     }
 }
+
+@Composable
+fun OrderDetails(){
+
+}
