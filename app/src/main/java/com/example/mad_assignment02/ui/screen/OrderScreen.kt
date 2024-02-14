@@ -24,7 +24,7 @@ class OrderScreen {
 @Preview
 @Composable
 fun Order_Screen_Preview() {
-    TopTabs()
+//    TopTabs()
 }
 @Composable
 fun Order_Screen() {
