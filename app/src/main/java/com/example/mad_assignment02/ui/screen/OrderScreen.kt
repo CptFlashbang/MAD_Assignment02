@@ -27,7 +27,9 @@ fun Order_Screen_Preview() {
     TopTabs()
 }
 @Composable
-fun Order_Screen(){
+fun Order_Screen() {
+    var selectedTabIndex by remember { mutableStateOf(0) }
+
     Scaffold(
 
     ) { innerPadding ->
