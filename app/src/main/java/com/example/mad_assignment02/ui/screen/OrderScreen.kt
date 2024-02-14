@@ -42,6 +42,16 @@ fun TopTabs(){
             onClick = { selectedTabIndex = 0 },
             text = { Text("Tab 1") }
         )
+        Tab(
+            selected = (selectedTabIndex == 1),
+            onClick = { selectedTabIndex = 1 },
+            text = { Text("Tab 2") }
+        )
+        Tab(
+            selected = (selectedTabIndex == 2),
+            onClick = { selectedTabIndex = 2 },
+            text = { Text("Tab 3") }
+        )
 
     }
 }
