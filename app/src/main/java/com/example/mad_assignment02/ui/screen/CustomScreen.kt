@@ -43,7 +43,7 @@ class CustomScreen {
 @Preview
 @Composable
 fun CustomScreenPreview() {
-    MainFillingsList(main_fillings)
+    Custom_Screen()
 }
 
 @Composable
