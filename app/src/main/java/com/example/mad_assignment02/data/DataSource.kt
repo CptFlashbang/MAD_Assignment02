@@ -193,25 +193,5 @@ data class BurritoClass(
                 salads
             )
         }
-
-        fun createCustom(
-            id: Int,
-            price: Double,
-            mainFilling: Int,
-            additionalFillings: List<Int>,
-            sauces: List<Int>,
-            salads: List<Int>
-        ): BurritoClass {
-            return BurritoClass(
-                id,
-                title = 0, // placeholder default value necessary for custom
-                description = 0, // placeholder default value necessary for custom
-                price,
-                mainFilling,
-                additionalFillings,
-                sauces,
-                salads
-            )
-        }
     }
 }
