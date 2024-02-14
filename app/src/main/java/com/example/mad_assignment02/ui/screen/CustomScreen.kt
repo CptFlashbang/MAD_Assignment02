@@ -135,6 +135,12 @@ fun Custom_Screen() {
                             contentDescription = "Add to cart action Icon"
                         )
                     }
+                    IconButton(onClick = { /* Handle action icon click */ }) {
+                        Icon(
+                            imageVector = ImageVector.vectorResource(id = R.drawable.favorite_fill0_wght400_grad0_opsz24),
+                            contentDescription = "Add to favourite action Icon"
+                        )
+                    }
                 }
             )
          },
