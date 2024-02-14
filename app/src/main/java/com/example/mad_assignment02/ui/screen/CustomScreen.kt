@@ -132,13 +132,7 @@ fun Custom_Screen() {
                     IconButton(onClick = { /* Handle navigation icon click */ }) {
                         Icon(
                             imageVector = ImageVector.vectorResource(id = R.drawable.add_shopping_cart_fill0_wght400_grad0_opsz24),
-                            contentDescription = "Navigation Icon"
-                        )
-                    }
-                    IconButton(onClick = { /* Handle action icon click */ }) {
-                        Icon(
-                            imageVector = ImageVector.vectorResource(id = R.drawable.favorite_fill0_wght400_grad0_opsz24),
-                            contentDescription = "Action Icon"
+                            contentDescription = "Add to cart action Icon"
                         )
                     }
                 }
