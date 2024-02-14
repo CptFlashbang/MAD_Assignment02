@@ -120,6 +120,25 @@ fun Custom_Screen() {
     val selectedSalads = remember { mutableStateOf(mutableSetOf<Int>()) }
 
     Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Build-a-Burrito") },
+                actions = {
+                    IconButton(onClick = { /* Handle navigation icon click */ }) {
+                        Icon(
+                            imageVector = ImageVector.vectorResource(id = R.drawable.add_shopping_cart_fill0_wght400_grad0_opsz24),
+                            contentDescription = "Navigation Icon"
+                        )
+                    }
+                    IconButton(onClick = { /* Handle action icon click */ }) {
+                        Icon(
+                            imageVector = ImageVector.vectorResource(id = R.drawable.favorite_fill0_wght400_grad0_opsz24),
+                            contentDescription = "Action Icon"
+                        )
+                    }
+                }
+            )
+         },
         bottomBar = {
             Button(onClick = { /* TODO: Add action for button click */ }) {
                 Text("Add to Order")
