@@ -38,8 +38,8 @@ fun TopTabs(){
     var selectedTabIndex:Int =0
     TabRow(selectedTabIndex) {
         Tab(
-            selected = (selectedTabIndex == 1),
-            onClick = { selectedTabIndex = 1 },
+            selected = (selectedTabIndex == 0),
+            onClick = { selectedTabIndex = 0 },
             text = { Text("Tab 1") }
         )
 
