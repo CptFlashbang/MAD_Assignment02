@@ -106,9 +106,12 @@ fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableSet<Int>, tit
                 modifier = Modifier
                     .fillMaxWidth(),
                 leadingContent = {
-                    RadioButton(
-                        selected = (fillingId == selectedMainFilling.value),
-                        onClick = { selectedMainFilling.value = fillingId }
+                    Checkbox(
+                        checked = fillingId in selectedItems,
+                        onCheckedChange = { isChecked ->
+                            if (isChecked) selectedItems.add(fillingId)
+                            else selectedItems.remove(fillingId)
+                        }
                     )
                 },
                 headlineText = { Text(stringResource(id = fillingId)) }
