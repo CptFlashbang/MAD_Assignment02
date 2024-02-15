@@ -164,11 +164,11 @@ fun Custom_Screen() {
                 }
             )
          },
-        bottomBar = {
-            Button(onClick = { /* TODO: Add action for button click */ }) {
-                Text("Add to Order")
-            }
-        },
+//        bottomBar = {
+//            Button(onClick = { /* TODO: Add action for button click */ }) {
+//                Text("Add to Order")
+//            }
+//        },
     )
     { innerPadding ->
             LazyColumn(modifier = Modifier.padding(innerPadding)) {
