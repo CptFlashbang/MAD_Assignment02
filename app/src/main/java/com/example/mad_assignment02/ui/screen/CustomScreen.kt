@@ -133,6 +133,11 @@ fun CalculatePrice(
 }
 
 @Composable
+fun DisplayPrice(price: Double) {
+    Text("Current Price: £${String.format("%.2f", price)}")
+}
+
+@Composable
 fun Custom_Screen() {
     val selectedMainFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
     val selectedAdditionalFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
