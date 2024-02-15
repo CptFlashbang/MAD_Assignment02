@@ -171,12 +171,7 @@ fun Custom_Screen() {
         },
     )
     { innerPadding ->
-
-        LazyColumn(
-            modifier = Modifier
-                .padding(innerPadding),
-        ) {
-            Column {
+            Column(modifier = Modifier.padding(innerPadding)) {
                 BurritoNameField(burritoName)
                 MainFillingsSection(main_fillings, selectedMainFilling)
                 AdditionalItemsSection(additional_fillings,selectedAdditionalFillings.value, "Additional Fillings")
