@@ -245,7 +245,7 @@ fun Custom_Screen() {
 //                )
 //            }
             Column {
-                BurritoNameField()
+                BurritoNameField(burritoName)
                 MainFillingsSection()
                 AdditionalItemsSection()
                 AdditionalItemsSection()
