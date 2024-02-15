@@ -98,7 +98,24 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
 
 @Composable
 fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableSet<Int>){
-
+    Column {
+        Text("Select Main Filling")
+        mainFillings.forEach { fillingId ->
+            val fillingText = stringResource(fillingId)
+            ListItem(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { selectedMainFilling.value = fillingId },
+                leadingContent = {
+                    RadioButton(
+                        selected = (fillingId == selectedMainFilling.value),
+                        onClick = { selectedMainFilling.value = fillingId }
+                    )
+                },
+                headlineText = { Text(stringResource(id = fillingId)) }
+            )
+        }
+    }
 }
 
 @Composable
