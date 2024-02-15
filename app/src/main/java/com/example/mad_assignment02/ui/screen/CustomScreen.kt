@@ -54,6 +54,7 @@ fun BurritoNameField(burritoName: MutableState<String>){
         onValueChange = { burritoName.value = it },
         label = { Text("Name Your Burrito") },
         modifier = Modifier.fillMaxWidth(),
+        singleLine = true
     )
 }
 
