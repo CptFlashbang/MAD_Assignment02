@@ -97,7 +97,7 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
 }
 
 @Composable
-fun AdditionalItemsSection(){
+fun AdditionalItemsSection(items: List<Int>){
 
 }
 
