@@ -52,6 +52,7 @@ fun BurritoNameField(burritoName: MutableState<String>){
     TextField(
         value = burritoName.value,
         onValueChange = { burritoName.value = it },
+        label = { Text("Name Your Burrito") },
     )
 }
 
