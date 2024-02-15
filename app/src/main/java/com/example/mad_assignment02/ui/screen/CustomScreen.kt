@@ -119,6 +119,16 @@ fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableSet<Int>, tit
         }
     }
 }
+
+@Composable
+fun CalculatePrice(
+    additionalFillings: List<Int>,
+    sauces: List<Int>,
+    salads: List<Int>
+){
+
+}
+
 @Composable
 fun Custom_Screen() {
     val selectedMainFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
