@@ -45,6 +45,10 @@ import com.example.mad_assignment02.ui.component.BottomNavBar
 class CustomScreen {
 }
 
+@Composable
+fun BurritoNameField(){
+
+}
 
 @Composable
 fun MainFillingListItem(fillingText: String, isSelected: Boolean, onSelect: () -> Unit) {
