@@ -95,6 +95,12 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
         }
     }
 }
+
+@Composable
+fun AdditionalItemsSection(){
+
+}
+
 @Composable
 fun FillingListItem(fillingText: String, isSelected: Boolean, onSelect: () -> Unit) {
     ListItem(
