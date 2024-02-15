@@ -249,7 +249,7 @@ fun Custom_Screen() {
                 MainFillingsSection(main_fillings, selectedMainFilling)
                 AdditionalItemsSection(additional_fillings,selectedAdditionalFillings.value, "Additional Fillings")
                 AdditionalItemsSection(sauces, selectedSauces.value, "Sauces")
-                AdditionalItemsSection()
+                AdditionalItemsSection(salads, selectedSalads.value, "Salads")
                 DisplayPrice(
                     CalculatePrice(
                         additionalFillings = , sauces = , salads =
