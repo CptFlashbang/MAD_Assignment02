@@ -139,7 +139,8 @@ fun DisplayPrice(price: Double) {
 
 @Composable
 fun Custom_Screen() {
-    val selectedMainFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
+    var burritoName = remember { mutableStateOf("") }
+    var selectedMainFilling = remember { mutableStateOf(main_fillings.first()) }
     val selectedAdditionalFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
     val selectedSauces = remember { mutableStateOf(mutableSetOf<Int>()) }
     val selectedSalads = remember { mutableStateOf(mutableSetOf<Int>()) }
