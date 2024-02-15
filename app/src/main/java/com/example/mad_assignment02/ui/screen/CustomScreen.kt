@@ -119,26 +119,6 @@ fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableSet<Int>, tit
         }
     }
 }
-
-@Composable
-fun FillingsList(fillings: List<Int>, selectedFillings: MutableSet<Int>) {
-    Column {
-        fillings.forEach { fillingId ->
-            val fillingText = stringResource(fillingId)
-            FillingListItem(
-                fillingText = fillingText,
-                isSelected = fillingId in selectedFillings,
-                onSelect = {
-                    if (fillingId in selectedFillings) {
-                        selectedFillings.remove(fillingId)
-                    } else {
-                        selectedFillings.add(fillingId)
-                    }
-                }
-            )
-        }
-    }
-}
 @Composable
 fun Custom_Screen() {
     val selectedMainFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
