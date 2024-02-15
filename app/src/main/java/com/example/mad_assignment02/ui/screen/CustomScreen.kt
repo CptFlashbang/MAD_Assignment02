@@ -171,19 +171,19 @@ fun Custom_Screen() {
         },
     )
     { innerPadding ->
-            Column(modifier = Modifier.padding(innerPadding)) {
-                BurritoNameField(burritoName)
-                MainFillingsSection(main_fillings, selectedMainFilling)
-                AdditionalItemsSection(additional_fillings,selectedAdditionalFillings.value, "Additional Fillings")
-                AdditionalItemsSection(sauces, selectedSauces.value, "Sauces")
-                AdditionalItemsSection(salads, selectedSalads.value, "Salads")
-                DisplayPrice(
+            LazyColumn(modifier = Modifier.padding(innerPadding)) {
+                item { BurritoNameField(burritoName) }
+                item { MainFillingsSection(main_fillings, selectedMainFilling) }
+                item { AdditionalItemsSection(additional_fillings,selectedAdditionalFillings.value, "Additional Fillings") }
+                item { AdditionalItemsSection(sauces, selectedSauces.value, "Sauces") }
+                item { AdditionalItemsSection(salads, selectedSalads.value, "Salads") }
+                item { DisplayPrice(
                     CalculatePrice(
                         selectedAdditionalFillings.value,
                         selectedSauces.value,
                         selectedSalads.value
                     )
-                )
+                ) }
             }
     }
 }
