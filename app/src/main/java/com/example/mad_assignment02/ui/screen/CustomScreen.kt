@@ -90,7 +90,7 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
                         onClick = { selectedMainFilling.value = fillingId }
                     )
                 },
-                headlineText = { Text(fillingText) }
+                headlineText = { Text(stringResource(id = fillingId)) }
             )
         }
     }
