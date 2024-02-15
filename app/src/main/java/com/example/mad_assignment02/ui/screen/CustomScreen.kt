@@ -87,7 +87,7 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
                 leadingContent = {
                     RadioButton(
                         selected = (fillingId == selectedMainFilling.value),
-                        onClick = onSelect
+                        onClick = { selectedMainFilling.value = fillingId }
                     )
                 },
                 headlineText = { Text(fillingText) }
