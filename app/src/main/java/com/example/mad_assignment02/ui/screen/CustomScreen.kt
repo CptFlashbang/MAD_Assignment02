@@ -83,7 +83,7 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
             ListItem(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable(onClick = onSelect),
+                    .clickable { selectedMainFilling.value = fillingId },
                 leadingContent = {
                     RadioButton(
                         selected = isSelected,
