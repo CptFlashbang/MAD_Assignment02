@@ -121,22 +121,6 @@ fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableSet<Int>, tit
 }
 
 @Composable
-fun FillingListItem(fillingText: String, isSelected: Boolean, onSelect: () -> Unit) {
-    ListItem(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = onSelect),
-        leadingContent = {
-            Checkbox(
-                checked = isSelected,
-                onCheckedChange = { onSelect() }
-            )
-        },
-        headlineText = { Text(fillingText) }
-    )
-}
-
-@Composable
 fun FillingsList(fillings: List<Int>, selectedFillings: MutableSet<Int>) {
     Column {
         fillings.forEach { fillingId ->
