@@ -100,12 +100,11 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
 fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableSet<Int>, title: String){
     Column {
         Text(title)
-        mainFillings.forEach { fillingId ->
+        items.forEach { fillingId ->
             val fillingText = stringResource(fillingId)
             ListItem(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { selectedMainFilling.value = fillingId },
                 leadingContent = {
                     RadioButton(
                         selected = (fillingId == selectedMainFilling.value),
