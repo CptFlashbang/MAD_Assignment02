@@ -75,7 +75,7 @@ fun MainFillingListItem(fillingText: String, isSelected: Boolean, onSelect: () -
 }
 
 @Composable
-fun MainFillingsSection(mainFillings: List<Int>) {
+fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableState<Int>) {
     var selectedFilling by remember { mutableStateOf(mainFillings.firstOrNull() ?: 0) }
 
     Column {
