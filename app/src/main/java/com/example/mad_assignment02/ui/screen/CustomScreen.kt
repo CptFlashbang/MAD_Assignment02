@@ -126,7 +126,10 @@ fun CalculatePrice(
     sauces: List<Int>,
     salads: List<Int>
 ):Double {
+    val basePrice = 5.00 // Base price for burrito
+    val additionalPrice = 0.50 // Price per additional item
 
+    return basePrice + (additionalFillings.size + sauces.size + salads.size) * additionalPrice
 }
 
 @Composable
