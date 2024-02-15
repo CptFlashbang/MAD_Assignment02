@@ -244,6 +244,18 @@ fun Custom_Screen() {
 //                    }
 //                )
 //            }
+            Column {
+                BurritoNameField()
+                MainFillingsSection()
+                AdditionalItemsSection()
+                AdditionalItemsSection()
+                AdditionalItemsSection()
+                DisplayPrice(
+                    CalculatePrice(
+                        additionalFillings = , sauces = , salads =
+                    )
+                )
+            }
         }
     }
 }
