@@ -110,7 +110,7 @@ fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableList<Int>, ti
                     .fillMaxWidth(),
                 leadingContent = {
                     Checkbox(
-                        checked = fillingId in selectedItems,
+                        checked = isSelected
                         onCheckedChange = { isChecked ->
                             if (isChecked) selectedItems.add(fillingId)
                             else selectedItems.remove(fillingId)
