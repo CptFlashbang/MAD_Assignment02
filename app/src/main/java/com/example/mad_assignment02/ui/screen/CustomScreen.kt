@@ -185,6 +185,5 @@ fun Custom_Screen() {
                     )
                 )
             }
-        }
     }
 }
