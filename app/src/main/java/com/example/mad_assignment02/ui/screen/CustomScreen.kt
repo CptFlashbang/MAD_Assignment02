@@ -104,7 +104,7 @@ fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableSet<Int>, tit
             val fillingText = stringResource(fillingId)
             ListItem(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
                 leadingContent = {
                     RadioButton(
                         selected = (fillingId == selectedMainFilling.value),
