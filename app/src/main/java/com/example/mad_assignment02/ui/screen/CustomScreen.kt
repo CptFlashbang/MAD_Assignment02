@@ -75,9 +75,9 @@ fun MainFillingListItem(fillingText: String, isSelected: Boolean, onSelect: () -
 }
 
 @Composable
-fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableState<Int>, title: String) {
+fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableState<Int>) {
     Column {
-        Text(title)
+        Text("Select Main Filling")
         mainFillings.forEach { fillingId ->
             val fillingText = stringResource(fillingId)
             ListItem(
@@ -97,9 +97,9 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
 }
 
 @Composable
-fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableSet<Int>){
+fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableSet<Int>, title: String){
     Column {
-        Text("Select Main Filling")
+        Text(title)
         mainFillings.forEach { fillingId ->
             val fillingText = stringResource(fillingId)
             ListItem(
