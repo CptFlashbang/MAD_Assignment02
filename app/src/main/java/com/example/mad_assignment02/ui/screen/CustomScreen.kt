@@ -247,7 +247,7 @@ fun Custom_Screen() {
             Column {
                 BurritoNameField(burritoName)
                 MainFillingsSection(main_fillings, selectedMainFilling)
-                AdditionalItemsSection()
+                AdditionalItemsSection(additional_fillings,selectedAdditionalFillings.value, "Additional Fillings")
                 AdditionalItemsSection()
                 AdditionalItemsSection()
                 DisplayPrice(
