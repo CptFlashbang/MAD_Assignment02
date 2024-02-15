@@ -86,7 +86,7 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
                     .clickable { selectedMainFilling.value = fillingId },
                 leadingContent = {
                     RadioButton(
-                        selected = isSelected,
+                        selected = (fillingId == selectedMainFilling.value),
                         onClick = onSelect
                     )
                 },
