@@ -29,7 +29,6 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
@@ -97,7 +96,7 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
 }
 
 @Composable
-fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableSet<Int>, title: String){
+fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableList<Int>, title: String){
     Column {
         Text(title)
         items.forEach { fillingId ->
@@ -141,9 +140,9 @@ fun DisplayPrice(price: Double) {
 fun Custom_Screen() {
     var burritoName = remember { mutableStateOf("") }
     var selectedMainFilling = remember { mutableStateOf(main_fillings.first()) }
-    val selectedAdditionalFillings = remember { mutableStateOf(mutableSetOf<Int>()) }
-    val selectedSauces = remember { mutableStateOf(mutableSetOf<Int>()) }
-    val selectedSalads = remember { mutableStateOf(mutableSetOf<Int>()) }
+    val selectedAdditionalFillings = remember { mutableStateOf(mutableListOf<Int>()) }
+    val selectedSauces = remember { mutableStateOf(mutableListOf<Int>()) }
+    val selectedSalads = remember { mutableStateOf(mutableListOf<Int>()) }
 
     Scaffold(
         topBar = {
