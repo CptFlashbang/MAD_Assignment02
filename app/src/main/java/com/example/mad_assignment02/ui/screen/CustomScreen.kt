@@ -80,10 +80,17 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
         Text("Select Main Filling")
         mainFillings.forEach { fillingId ->
             val fillingText = stringResource(fillingId)
-            MainFillingListItem(
-                fillingText = fillingText,
-                isSelected = fillingId == selectedFilling,
-                onSelect = { selectedFilling = fillingId }
+            ListItem(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable(onClick = onSelect),
+                leadingContent = {
+                    RadioButton(
+                        selected = isSelected,
+                        onClick = onSelect
+                    )
+                },
+                headlineText = { Text(fillingText) }
             )
         }
     }
