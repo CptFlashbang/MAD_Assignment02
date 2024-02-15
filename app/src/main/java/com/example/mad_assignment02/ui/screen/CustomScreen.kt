@@ -104,6 +104,7 @@ fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableList<Int>, ti
         Text(title)
         items.forEach { fillingId ->
             val fillingText = stringResource(fillingId)
+            val isSelected = fillingId in selectedItems
             ListItem(
                 modifier = Modifier
                     .fillMaxWidth(),
@@ -174,20 +175,42 @@ fun Custom_Screen() {
 //        },
     )
     { innerPadding ->
-            LazyColumn(modifier = Modifier.padding(innerPadding)) {
-                item { BurritoNameField(burritoName) }
-                item { MainFillingsSection(main_fillings, selectedMainFilling) }
-                item { AdditionalItemsSection(additional_fillings,selectedAdditionalFillings.value, "Additional Fillings") }
-                item { AdditionalItemsSection(sauces, selectedSauces.value, "Sauces") }
-                item { AdditionalItemsSection(salads, selectedSalads.value, "Salads") }
-                item { DisplayPrice(
+        LazyColumn(modifier = Modifier.padding(innerPadding)) {
+            item { BurritoNameField(burritoName) }
+
+            item {
+                ExpandableSection(title = "Main Fillings") {
+                    MainFillingsSection(main_fillings, selectedMainFilling)
+                }
+            }
+
+            item {
+                ExpandableSection(title = "Additional Fillings") {
+                    AdditionalItemsSection(additional_fillings, selectedAdditionalFillings.value, "Additional Fillings")
+                }
+            }
+
+            item {
+                ExpandableSection(title = "Sauces") {
+                    AdditionalItemsSection(sauces, selectedSauces.value, "Sauces")
+                }
+            }
+
+            item {
+                ExpandableSection(title = "Salads") {
+                    AdditionalItemsSection(salads, selectedSalads.value, "Salads")
+                }
+            }
+            item {
+                DisplayPrice(
                     CalculatePrice(
                         selectedAdditionalFillings.value,
                         selectedSauces.value,
                         selectedSalads.value
                     )
-                ) }
+                )
             }
+        }
     }
 }
 
