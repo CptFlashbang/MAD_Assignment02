@@ -51,7 +51,7 @@ class CustomScreen {
 fun BurritoNameField(burritoName: MutableState<String>){
     TextField(
         value = burritoName.value,
-        onValueChange =
+        onValueChange = { burritoName.value = it },
     )
 }
 
