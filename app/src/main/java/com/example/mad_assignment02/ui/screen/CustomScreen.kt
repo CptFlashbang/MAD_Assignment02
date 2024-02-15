@@ -50,7 +50,7 @@ class CustomScreen {
 @Composable
 fun BurritoNameField(burritoName: MutableState<String>){
     TextField(
-        value = ,
+        value = burritoName.value,
         onValueChange =
     )
 }
