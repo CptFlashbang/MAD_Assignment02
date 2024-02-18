@@ -9,6 +9,10 @@ import com.example.mad_assignment02.data.DataSource.ReadyMadeBurritos
 class BurritoViewModel : ViewModel()  {
     private val _currentOrder = MutableLiveData<List<BurritoClass>>(listOf())
     val currentOrder: LiveData<List<BurritoClass>> = _currentOrder
+
+    fun addToOrder(burrito: BurritoClass) {
+    }
+
     fun getBurritoById(id: Int): BurritoClass {
         return ReadyMadeBurritos.first { it.id == id }
     }
