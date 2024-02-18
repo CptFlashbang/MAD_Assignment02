@@ -1,4 +1,6 @@
 package com.example.mad_assignment02.ui
 
-class BurritoViewModel {
+import androidx.lifecycle.ViewModel
+
+class BurritoViewModel : ViewModel()  {
 }
