@@ -28,6 +28,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -99,26 +100,20 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
 }
 
 @Composable
-fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableList<Int>, title: String){
+fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableList<Int>, title: String) {
     Column {
         Text(title)
-        items.forEach { fillingId ->
-            val fillingText = stringResource(fillingId)
-            val isSelected = fillingId in selectedItems
-            ListItem(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                leadingContent = {
-                    Checkbox(
-                        checked = isSelected
-                        onCheckedChange = { isChecked ->
-                            if (isChecked) selectedItems.add(fillingId)
-                            else selectedItems.remove(fillingId)
-                        }
-                    )
-                },
-                headlineText = { Text(stringResource(id = fillingId)) }
-            )
+        items.forEach { itemId ->
+            Row(Modifier.fillMaxWidth().padding(8.dp)) {
+                Checkbox(
+                    checked = itemId in selectedItems,
+                    onCheckedChange = { isChecked ->
+                        if (isChecked) selectedItems.add(itemId)
+                        else selectedItems.remove(itemId)
+                    }
+                )
+                Text(stringResource(id = itemId))
+            }
         }
     }
 }
