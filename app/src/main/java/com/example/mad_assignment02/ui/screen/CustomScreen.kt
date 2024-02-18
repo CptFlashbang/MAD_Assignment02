@@ -106,10 +106,16 @@ fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableList<Int>, ti
         items.forEach { itemId ->
             Row(Modifier.fillMaxWidth().padding(8.dp)) {
                 Checkbox(
-                    checked = itemId in selectedItems,
-                    onCheckedChange = { isChecked ->
-                        if (isChecked) selectedItems.add(itemId)
-                        else selectedItems.remove(itemId)
+                    checked = isChecked.value,
+                    onCheckedChange = { selected ->
+                        isChecked.value = selected
+                        if (selected) {
+                            if (itemId !in selectedItems) {
+                                selectedItems.add(itemId)
+                            }
+                        } else {
+                            selectedItems.remove(itemId)
+                        }
                     }
                 )
                 Text(stringResource(id = itemId))
