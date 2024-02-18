@@ -2,6 +2,7 @@
 
 package com.example.mad_assignment02.ui.screen
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -18,10 +19,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.mad_assignment02.data.BurritoClass
+import com.example.mad_assignment02.ui.BurritoViewModel
 import com.example.mad_assignment02.ui.component.BottomNavBar
 
 class OrderScreen {
@@ -44,11 +48,12 @@ fun Order_Screen() {
                 .padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            when (selectedTabIndex) {
-                0 -> OrderDetails()
-                1 -> Text("Content of Tab 2")
-                2 -> Text("Content of Tab 3")
-            }
+//            when (selectedTabIndex) {
+//                0 -> OrderDetails()
+//                1 -> Text("Content of Tab 2")
+//                2 -> Text("Content of Tab 3")
+//            }
+            OrderDetails()
         }
     }
 }
@@ -76,21 +81,29 @@ fun TopTabs(selectedTabIndex: Int, onSelectTab: (Int) -> Unit) {
 
 @Composable
 fun OrderDetails(){
+    val viewModel: BurritoViewModel = viewModel()
+    val uiState = viewModel.uiState.value
+    Log.d("OrderDetails", "Displaying ${uiState.burritos.size} burritos")
     Column {
-        Text("Burrito Name")
-        Text("Main Filling:")
-        Text("Grilled chicken marinated in a zesty mango-chipotle glaze.")
-        Divider()
-        Text("Additional Fillings: ")
-        Text("Mango salsa, avocado slices, cilantro-lime rice, and a drizzle of spicy mango-habanero sauce.")
-        Divider()
-        Text("Sauces:")
-        Text("Mango salsa, avocado slices, cilantro-lime rice, and a drizzle of spicy mango-habanero sauce.")
-        Divider()
-        Text("Salads:")
-        Text("Mango salsa, avocado slices, cilantro-lime rice, and a drizzle of spicy mango-habanero sauce.")
-        Divider()
-        Text("£8.99")
+        uiState.burritos.forEach { burrito ->
+            Text(stringResource(burrito.title)) // Burrito Name
+        }
     }
+//    Column {
+//        Text("Burrito Name")
+//        Text("Main Filling:")
+//        Text("Grilled chicken marinated in a zesty mango-chipotle glaze.")
+//        Divider()
+//        Text("Additional Fillings: ")
+//        Text("Mango salsa, avocado slices, cilantro-lime rice, and a drizzle of spicy mango-habanero sauce.")
+//        Divider()
+//        Text("Sauces:")
+//        Text("Mango salsa, avocado slices, cilantro-lime rice, and a drizzle of spicy mango-habanero sauce.")
+//        Divider()
+//        Text("Salads:")
+//        Text("Mango salsa, avocado slices, cilantro-lime rice, and a drizzle of spicy mango-habanero sauce.")
+//        Divider()
+//        Text("£8.99")
+//    }
 
 }

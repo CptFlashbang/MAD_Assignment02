@@ -1,5 +1,6 @@
 package com.example.mad_assignment02.ui
 
+import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
@@ -17,7 +18,11 @@ class BurritoViewModel : ViewModel()  {
 
     fun addToOrder(burrito: BurritoClass) {
 //        _currentOrder.value = _currentOrder.value.orEmpty() + burrito
-        _uiState.value = OrderUIState(_uiState.value.burritos + burrito)
+//        _uiState.value = OrderUIState(_uiState.value.burritos + burrito)
+        Log.d("BurritoViewModel", "Adding burrito to order: ${burrito.title}")
+        val updatedBurritos = _uiState.value.burritos + burrito
+        _uiState.value = OrderUIState(updatedBurritos)
+
     }
 
     fun getBurritoById(id: Int): BurritoClass {
