@@ -19,19 +19,24 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.mad_assignment02.R
 import com.example.mad_assignment02.data.DataSource.ReadyMadeBurritos
+import com.example.mad_assignment02.ui.BurritoViewModel
 
 @Composable
 fun Ready_Made_Detail_Screen(
     burritoId: Int,
     navHostController: NavHostController,
+//    viewModel: BurritoViewModel,
     navigateUp: () -> Unit = {},
     ){
 //    val burrito = ReadyMadeBurritos.first { burrito ->
 //        burrito.id == burritoId
-    }
+    val viewModel: BurritoViewModel = viewModel()
+    val burrito = viewModel.getBurritoById(burritoId)
+//    }
     Scaffold(
         topBar = {
             TopAppBar(
