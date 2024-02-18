@@ -22,6 +22,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -29,6 +30,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.mad_assignment02.data.DataSource.ReadyMadeBurritos
+import com.example.mad_assignment02.ui.BurritoViewModel
 import com.example.mad_assignment02.ui.component.BottomNavBar
 import com.example.mad_assignment02.ui.screen.Custom_Screen
 import com.example.mad_assignment02.ui.screen.Home_Screen
@@ -64,6 +66,7 @@ class MainActivity : ComponentActivity() {
 fun BurritoApp(
     navController: NavHostController = rememberNavController()
 ) {
+    val viewModelTest: BurritoViewModel = viewModel()
     Scaffold(
         bottomBar = {
             BottomAppBar(
@@ -97,6 +100,7 @@ fun BurritoApp(
                     //navBackStackEntry used to extract userId from route
                     navBackStackEntry.arguments!!.getInt("id"),
                     navController,
+                    viewModelTest,
                     navigateUp = { navController.navigateUp() }
                 )
             }
@@ -105,7 +109,9 @@ fun BurritoApp(
                 Custom_Screen()
             }
             composable(route = BurritoScreen.Order.name) {
-                Order_Screen()
+                Order_Screen(
+                    viewModelTest
+                )
             }
         }
     }

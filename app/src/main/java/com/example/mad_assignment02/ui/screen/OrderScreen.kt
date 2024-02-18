@@ -34,10 +34,12 @@ class OrderScreen {
 @Preview
 @Composable
 fun Order_Screen_Preview() {
-    OrderDetails()
+    OrderDetails(viewModel())
 }
 @Composable
-fun Order_Screen() {
+fun Order_Screen(
+    viewModelTest: BurritoViewModel
+) {
     var selectedTabIndex by remember { mutableStateOf(0) }
 
     Scaffold(
@@ -53,7 +55,7 @@ fun Order_Screen() {
 //                1 -> Text("Content of Tab 2")
 //                2 -> Text("Content of Tab 3")
 //            }
-            OrderDetails()
+            OrderDetails(viewModelTest)
         }
     }
 }
@@ -80,8 +82,10 @@ fun TopTabs(selectedTabIndex: Int, onSelectTab: (Int) -> Unit) {
 }
 
 @Composable
-fun OrderDetails(){
-    val viewModel: BurritoViewModel = viewModel()
+fun OrderDetails(
+    viewModel: BurritoViewModel
+){
+//    val viewModel: BurritoViewModel = viewModel()
     val uiState = viewModel.uiState.value
     Log.d("OrderDetails", "Displaying ${uiState.burritos.size} burritos")
     Column {
