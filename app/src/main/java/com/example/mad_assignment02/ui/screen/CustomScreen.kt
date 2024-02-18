@@ -104,6 +104,9 @@ fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableList<Int>, ti
     Column {
         Text(title)
         items.forEach { itemId ->
+            // Remember the checked state for each item
+            val isChecked = remember { mutableStateOf(itemId in selectedItems) }
+
             Row(Modifier.fillMaxWidth().padding(8.dp)) {
                 Checkbox(
                     checked = isChecked.value,
