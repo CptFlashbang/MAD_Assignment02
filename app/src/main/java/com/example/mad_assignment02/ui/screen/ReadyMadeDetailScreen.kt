@@ -29,8 +29,8 @@ fun Ready_Made_Detail_Screen(
     navHostController: NavHostController,
     navigateUp: () -> Unit = {},
     ){
-    val burrito = ReadyMadeBurritos.first { burrito ->
-        burrito.id == burritoId
+//    val burrito = ReadyMadeBurritos.first { burrito ->
+//        burrito.id == burritoId
     }
     Scaffold(
         topBar = {
