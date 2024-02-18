@@ -54,7 +54,7 @@ fun Ready_Made_Detail_Screen(
                     Text(text = stringResource(id = burrito.title))
                 },
                 actions = {
-                    IconButton(onClick = { /* Handle navigation icon click */ }) {
+                    IconButton(onClick = { viewModel.addToOrder(burrito) }) {
                         Icon(
                             imageVector = ImageVector.vectorResource(id = R.drawable.add_shopping_cart_fill0_wght400_grad0_opsz24),
                             contentDescription = "Add to cart action Icon"
