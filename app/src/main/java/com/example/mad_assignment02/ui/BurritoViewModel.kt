@@ -11,6 +11,7 @@ class BurritoViewModel : ViewModel()  {
     val currentOrder: LiveData<List<BurritoClass>> = _currentOrder
 
     fun addToOrder(burrito: BurritoClass) {
+        _currentOrder.value = _currentOrder.value.orEmpty() + burrito
     }
 
     fun getBurritoById(id: Int): BurritoClass {
