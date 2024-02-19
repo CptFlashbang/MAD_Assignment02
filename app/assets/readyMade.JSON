@@ -1,0 +1,175 @@
+[
+  {
+    "id": 1,
+    "name": "Mango Tango",
+    "description": "R.string.Pre_Made_01_Description",
+    "price": 8.99,
+    "main_filling": "R.string.Main_Filling_01",
+    "additional_fillings": [
+      "R.string.Additional_Filling_01"
+    ],
+    "sauces": [
+      "R.string.Sauce_01",
+      "R.string.Sauce_03"
+    ],
+    "salads": [
+      "R.string.Salad_01"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sizzling Southwest Steak",
+    "description": "R.string.Pre_Made_02_Description",
+    "price": 9.99,
+    "main_filling": "R.string.Main_Filling_02",
+    "additional_fillings": [
+      "R.string.Additional_Filling_02"
+    ],
+    "sauces": [
+      "R.string.Sauce_02",
+      "R.string.Sauce_04"
+    ],
+    "salads": [
+      "R.string.Salad_02"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Vegan Fiesta",
+    "description": "R.string.Pre_Made_03_Description",
+    "price": 7.99,
+    "main_filling": "R.string.Main_Filling_03",
+    "additional_fillings": [
+      "R.string.Additional_Filling_03"
+    ],
+    "sauces": [
+      "R.string.Sauce_02",
+      "R.string.Sauce_05",
+      "R.string.Sauce_06"
+    ],
+    "salads": [
+      "R.string.Salad_03"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Thai-inspired Shrimp",
+    "description": "R.string.Pre_Made_04_Description",
+    "price": 10.99,
+    "main_filling": "R.string.Main_Filling_04",
+    "additional_fillings": [
+      "R.string.Additional_Filling_04"
+    ],
+    "sauces": [
+      "R.string.Sauce_07"
+    ],
+    "salads": [
+      "R.string.Salad_04",
+      "R.string.Salad_05"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Mediterranean Chickpea",
+    "description": "R.string.Pre_Made_05_Description",
+    "price": 8.49,
+    "main_filling": "R.string.Main_Filling_05",
+    "additional_fillings": [
+      "R.string.Additional_Filling_05"
+    ],
+    "sauces": [
+      "R.string.Sauce_08"
+    ],
+    "salads": [
+      "R.string.Salad_05",
+      "R.string.Salad_06",
+      "R.string.Salad_07"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Hawaiian Luau Pork",
+    "description": "R.string.Pre_Made_06_Description",
+    "price": 11.49,
+    "main_filling": "R.string.Main_Filling_06",
+    "additional_fillings": [
+      "R.string.Additional_Filling_06"
+    ],
+    "sauces": [
+      "R.string.Sauce_09",
+      "R.string.Sauce_10"
+    ],
+    "salads": [
+      "R.string.Salad_03"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Buffalo Chicken Blue Cheese",
+    "description": "R.string.Pre_Made_07_Description",
+    "price": 9.79,
+    "main_filling": "R.string.Main_Filling_07",
+    "additional_fillings": [
+      "R.string.Additional_Filling_08"
+    ],
+    "sauces": [
+      "R.string.Sauce_11"
+    ],
+    "salads": [
+      "R.string.Salad_02",
+      "R.string.Salad_06",
+      "R.string.Salad_08"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Tex-Mex Brisket Bonanza",
+    "description": "R.string.Pre_Made_08_Description",
+    "price": 11.99,
+    "main_filling": "R.string.Main_Filling_08",
+    "additional_fillings": [
+      "R.string.Additional_Filling_07"
+    ],
+    "sauces": [
+      "R.string.Sauce_12",
+      "R.string.Sauce_13"
+    ],
+    "salads": [
+      "R.string.Salad_09"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Mediterranean Lamb Delight",
+    "description": "R.string.Pre_Made_09_Description",
+    "price": 10.49,
+    "main_filling": "R.string.Main_Filling_09",
+    "additional_fillings": [
+      "R.string.Additional_Filling_05"
+    ],
+    "sauces": [
+      "R.string.Sauce_08"
+    ],
+    "salads": [
+      "R.string.Salad_06",
+      "R.string.Salad_10"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Sweet Potato and Black Bean",
+    "description": "R.string.Pre_Made_10_Description",
+    "price": 8.29,
+    "main_filling": "R.string.Main_Filling_10",
+    "additional_fillings": [
+      "R.string.Additional_Filling_01"
+    ],
+    "sauces": [
+      "R.string.Sauce_02",
+      "R.string.Sauce_14"
+    ],
+    "salads": [
+      "R.string.Salad_01"
+    ]
+  }
+]
