@@ -58,7 +58,7 @@ fun Order_Screen(
         ) {
             when (selectedTabIndex) {
                 0 -> OrderDetails(viewModelTest)
-                1 -> Text("Content of Tab 2")
+                1 -> PreviousOrder(viewModelTest)
                 2 -> FavouriteDetails(viewModelTest)
             }
         }
@@ -76,7 +76,7 @@ fun TopTabs(selectedTabIndex: Int, onSelectTab: (Int) -> Unit) {
         Tab(
             selected = selectedTabIndex == 1,
             onClick = { onSelectTab(1) },
-            text = { Text("Tab 2") }
+            text = { Text("Previous Order") }
         )
         Tab(
             selected = selectedTabIndex == 2,
@@ -139,6 +139,45 @@ fun OrderDetails(
 //        Text("£8.99")
 //    }
 
+}
+
+@Composable
+fun PreviousOrder(
+    viewModel: BurritoViewModel
+){
+    val previousOrderState by viewModel.previousOrderState
+    val faveBurrito = viewModel.faveBurrito
+
+    // Log favorite burrito if not null
+    if (faveBurrito != null) {
+        Log.d("FavouriteDetails", "Displaying ${faveBurrito.title} burrito")
+    }
+
+    Scaffold(
+        bottomBar = {
+            BottomAppBar { // This is your bottom bar
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    horizontalArrangement = Arrangement.End,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Spacer(Modifier.weight(1f)) // This spacer pushes the button to the right
+                    Button(onClick = { /* TODO: Implement add to order functionality */ }) {
+                        Text("Add to order")
+                    }
+                }
+            }
+        }
+    ) { innerPadding ->
+        Column(modifier = Modifier.padding(innerPadding)) {
+            // Display burritos from the previous order
+            previousOrderState.burritos.forEach { burrito ->
+                Text(burrito.title) // Burrito Name
+            }
+        }
+    }
 }
 
 @Composable
