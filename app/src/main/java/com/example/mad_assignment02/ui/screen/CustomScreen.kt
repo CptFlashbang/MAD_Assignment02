@@ -4,6 +4,7 @@
 
 package com.example.mad_assignment02.ui.screen
 
+import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -35,6 +36,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -129,7 +131,6 @@ fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableList<Int>, ti
     }
 }
 
-@Composable
 fun CalculatePrice(
     additionalFillings: List<Int>,
     sauces: List<Int>,
@@ -155,7 +156,7 @@ fun Custom_Screen(
     val selectedAdditionalFillings = remember { mutableStateOf(mutableListOf<Int>()) }
     val selectedSauces = remember { mutableStateOf(mutableListOf<Int>()) }
     val selectedSalads = remember { mutableStateOf(mutableListOf<Int>()) }
-
+    val context = LocalContext.current
     Scaffold(
         topBar = {
             TopAppBar(
@@ -168,16 +169,45 @@ fun Custom_Screen(
                             additionalFillings = selectedAdditionalFillings.value,
                             sauces = selectedSauces.value,
                             salads = selectedSalads.value,
-                            price = 3.00,
+                            price = CalculatePrice(
+                                selectedAdditionalFillings.value,
+                                selectedSauces.value,
+                                selectedSalads.value
+                            ),
                         )
                         viewModel.addToOrder(customBurrito)
+                        Toast.makeText(
+                            context,
+                            "'${customBurrito.title}' added to order",
+                            Toast.LENGTH_SHORT //can also specify Toast.LENGTH_LONG
+                        ).show()
                     }) {
                         Icon(
                             imageVector = ImageVector.vectorResource(id = R.drawable.add_shopping_cart_fill0_wght400_grad0_opsz24),
                             contentDescription = "Add to cart action Icon"
                         )
                     }
-                    IconButton(onClick = { /* Handle action icon click */ }) {
+                    IconButton(onClick = {
+                        val customBurrito = BurritoClass(
+                            title = burritoName.value,
+                            mainFilling = selectedMainFilling.value,
+                            additionalFillings = selectedAdditionalFillings.value,
+                            sauces = selectedSauces.value,
+                            salads = selectedSalads.value,
+                            price = CalculatePrice(
+                                selectedAdditionalFillings.value,
+                                selectedSauces.value,
+                                selectedSalads.value
+                            ),
+                        )
+                        /* TODO: Turn this into a function */
+                        viewModel.addFavoriteBurrito(customBurrito)
+                        Toast.makeText(
+                            context,
+                            "'${customBurrito.title}' saved as favourite",
+                            Toast.LENGTH_SHORT //can also specify Toast.LENGTH_LONG
+                        ).show()
+                    }) {
                         Icon(
                             imageVector = ImageVector.vectorResource(id = R.drawable.favorite_fill0_wght400_grad0_opsz24),
                             contentDescription = "Add to favourite action Icon"

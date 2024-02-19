@@ -2,6 +2,7 @@
 
 package com.example.mad_assignment02.ui.screen
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -16,6 +17,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
@@ -37,6 +39,7 @@ fun Ready_Made_Detail_Screen(
 //    val viewModel: BurritoViewModel = viewModel()
     val burrito = viewModel.getBurritoById(burritoId)
 //    }
+    val context = LocalContext.current
     Scaffold(
         topBar = {
             TopAppBar(
@@ -54,13 +57,27 @@ fun Ready_Made_Detail_Screen(
                     Text(text = burrito.title)
                 },
                 actions = {
-                    IconButton(onClick = { viewModel.addToOrder(burrito) }) {
+                    IconButton(onClick = {
+                        viewModel.addToOrder(burrito);
+                        Toast.makeText(
+                            context,
+                            "'${burrito.title}' added to order",
+                            Toast.LENGTH_SHORT //can also specify Toast.LENGTH_LONG
+                        ).show()
+
+                    }) {
                         Icon(
                             imageVector = ImageVector.vectorResource(id = R.drawable.add_shopping_cart_fill0_wght400_grad0_opsz24),
                             contentDescription = "Add to cart action Icon"
                         )
                     }
-                    IconButton(onClick = { viewModel.addFavoriteBurrito(burrito) }) {
+                    IconButton(onClick = {
+                        viewModel.addFavoriteBurrito(burrito)
+                        Toast.makeText(
+                            context,
+                            "'${burrito.title}' saved as favourite",
+                            Toast.LENGTH_SHORT //can also specify Toast.LENGTH_LONG
+                        ).show()}) {
                         Icon(
                             imageVector = ImageVector.vectorResource(id = R.drawable.favorite_fill0_wght400_grad0_opsz24),
                             contentDescription = "Add to favourite action Icon"
