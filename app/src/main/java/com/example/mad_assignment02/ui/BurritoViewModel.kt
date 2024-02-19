@@ -17,7 +17,7 @@ class BurritoViewModel : ViewModel()  {
     val uiState: State<OrderUIState> = _uiState
 
     private var _favoriteBurrito: BurritoClass? = null
-    val favoriteBurrito: BurritoClass?
+    val faveBurrito: BurritoClass?
         get() = _favoriteBurrito
 
     fun addToOrder(burrito: BurritoClass) {

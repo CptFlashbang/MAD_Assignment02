@@ -50,12 +50,12 @@ fun Order_Screen(
                 .padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-//            when (selectedTabIndex) {
-//                0 -> OrderDetails()
-//                1 -> Text("Content of Tab 2")
-//                2 -> Text("Content of Tab 3")
-//            }
-            OrderDetails(viewModelTest)
+            when (selectedTabIndex) {
+                0 -> OrderDetails(viewModelTest)
+                1 -> FavouriteDetails(viewModelTest)
+                2 -> Text("Content of Tab 3")
+            }
+
         }
     }
 }
@@ -110,4 +110,20 @@ fun OrderDetails(
 //        Text("£8.99")
 //    }
 
+}
+
+@Composable
+fun FavouriteDetails(
+    viewModel: BurritoViewModel
+){
+//    val viewModel: BurritoViewModel = viewModel()
+    val faveBurrito = viewModel.faveBurrito
+    if (faveBurrito != null) {
+        Log.d("FavouriteDetails", "Displaying ${faveBurrito.title} burritos")
+    }
+    Column {
+        if (faveBurrito != null) {
+            Text(faveBurrito.title)
+        }
+    }
 }
