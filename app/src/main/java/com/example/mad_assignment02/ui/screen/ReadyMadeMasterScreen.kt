@@ -32,7 +32,7 @@ class ReadyMadeMasterScreen {
 fun Ready_Made_List_Item(burritoInstance: BurritoClass, clickAction: (BurritoClass) -> Unit) {
     androidx.compose.material3.ListItem(
         headlineText = {
-            Text(text = stringResource(burritoInstance.title))
+            Text(text = burritoInstance.title)
         },
         supportingText = {
             Text(text = stringResource(burritoInstance.mainFilling))

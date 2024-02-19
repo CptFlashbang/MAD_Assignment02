@@ -51,7 +51,7 @@ fun Ready_Made_Detail_Screen(
                     }
                 },
                 title = {
-                    Text(text = stringResource(id = burrito.title))
+                    Text(text = burrito.title)
                 },
                 actions = {
                     IconButton(onClick = { viewModel.addToOrder(burrito) }) {
@@ -75,7 +75,7 @@ fun Ready_Made_Detail_Screen(
                 .padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Text(text = stringResource(burrito.description))
+            Text(text = burrito.description.toString())
             Text(text = "Price: ${burrito.price}")
             Text(text = "Main Filling: " + stringResource(burrito.mainFilling))
 

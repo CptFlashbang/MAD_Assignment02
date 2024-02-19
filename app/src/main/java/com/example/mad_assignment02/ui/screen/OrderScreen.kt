@@ -90,7 +90,7 @@ fun OrderDetails(
     Log.d("OrderDetails", "Displaying ${uiState.burritos.size} burritos")
     Column {
         uiState.burritos.forEach { burrito ->
-            Text(stringResource(burrito.title)) // Burrito Name
+            Text(burrito.title) // Burrito Name
         }
     }
 //    Column {
