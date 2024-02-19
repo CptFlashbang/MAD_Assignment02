@@ -16,12 +16,21 @@ class BurritoViewModel : ViewModel()  {
     private val _uiState = mutableStateOf(OrderUIState())
     val uiState: State<OrderUIState> = _uiState
 
+    private var _favoriteBurrito: BurritoClass? = null
+    val favoriteBurrito: BurritoClass?
+        get() = _favoriteBurrito
+
     fun addToOrder(burrito: BurritoClass) {
 //        _currentOrder.value = _currentOrder.value.orEmpty() + burrito
 //        _uiState.value = OrderUIState(_uiState.value.burritos + burrito)
         Log.d("BurritoViewModel", "Adding burrito to order: ${burrito.title}")
         val updatedBurritos = _uiState.value.burritos + burrito
         _uiState.value = OrderUIState(updatedBurritos)
+    }
+
+    fun addFavoriteBurrito(burrito: BurritoClass) {
+        _favoriteBurrito = burrito
+        Log.d("BurritoViewModel", "Favorite burrito set: ${burrito.title}")
     }
 
     fun getBurritoById(id: Int): BurritoClass {
