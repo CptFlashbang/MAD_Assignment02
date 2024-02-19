@@ -5,8 +5,12 @@ package com.example.mad_assignment02.ui.screen
 import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -18,6 +22,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -87,11 +92,34 @@ fun OrderDetails(
 //    val viewModel: BurritoViewModel = viewModel()
     val uiState = viewModel.uiState.value
     Log.d("OrderDetails", "Displaying ${uiState.burritos.size} burritos")
-    Column {
-        uiState.burritos.forEach { burrito ->
-            Text(burrito.title) // Burrito Name
+
+    Scaffold(
+        bottomBar = {
+            BottomAppBar { // This is your bottom bar
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    horizontalArrangement = Arrangement.End,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Spacer(Modifier.weight(1f)) // This spacer pushes the button to the right
+                    Button(onClick = { /* TODO: Implement order functionality */ }) {
+                        Text("Place Order")
+                    }
+                }
+            }
+        }
+    ) { innerPadding ->
+        Column(modifier = Modifier.padding(innerPadding)) {
+            uiState.burritos.forEach { burrito ->
+                Text(burrito.title) // Burrito Name
+            }
         }
     }
+
+
+
 //    Column {
 //        Text("Burrito Name")
 //        Text("Main Filling:")
