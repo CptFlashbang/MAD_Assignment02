@@ -41,10 +41,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.mad_assignment02.R
+import com.example.mad_assignment02.data.BurritoClass
 import com.example.mad_assignment02.data.DataSource.additional_fillings
 import com.example.mad_assignment02.data.DataSource.main_fillings
 import com.example.mad_assignment02.data.DataSource.salads
 import com.example.mad_assignment02.data.DataSource.sauces
+import com.example.mad_assignment02.ui.BurritoViewModel
 import com.example.mad_assignment02.ui.component.BottomNavBar
 
 class CustomScreen {

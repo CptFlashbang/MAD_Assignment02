@@ -22,7 +22,6 @@ class BurritoViewModel : ViewModel()  {
         Log.d("BurritoViewModel", "Adding burrito to order: ${burrito.title}")
         val updatedBurritos = _uiState.value.burritos + burrito
         _uiState.value = OrderUIState(updatedBurritos)
-
     }
 
     fun getBurritoById(id: Int): BurritoClass {
