@@ -106,7 +106,9 @@ fun BurritoApp(
             }
 
             composable(route = BurritoScreen.Custom.name) {
-                Custom_Screen()
+                Custom_Screen(
+                    viewModelTest,
+                )
             }
             composable(route = BurritoScreen.Order.name) {
                 Order_Screen(

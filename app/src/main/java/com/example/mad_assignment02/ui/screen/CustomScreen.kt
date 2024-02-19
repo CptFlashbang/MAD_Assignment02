@@ -145,7 +145,9 @@ fun DisplayPrice(price: Double) {
 }
 
 @Composable
-fun Custom_Screen() {
+fun Custom_Screen(
+    viewModel: BurritoViewModel,
+) {
     var burritoName = remember { mutableStateOf("") }
     var selectedMainFilling = remember { mutableStateOf(main_fillings.first()) }
     val selectedAdditionalFillings = remember { mutableStateOf(mutableListOf<Int>()) }
