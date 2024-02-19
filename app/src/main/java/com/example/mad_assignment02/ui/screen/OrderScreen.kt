@@ -3,6 +3,7 @@
 package com.example.mad_assignment02.ui.screen
 
 import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -154,22 +155,6 @@ fun PreviousOrder(
     }
 
     Scaffold(
-        bottomBar = {
-            BottomAppBar { // This is your bottom bar
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp),
-                    horizontalArrangement = Arrangement.End,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Spacer(Modifier.weight(1f)) // This spacer pushes the button to the right
-                    Button(onClick = { /* TODO: Implement add to order functionality */ }) {
-                        Text("Add to order")
-                    }
-                }
-            }
-        }
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {
             // Display burritos from the previous order
@@ -189,7 +174,7 @@ fun FavouriteDetails(
     if (faveBurrito != null) {
         Log.d("FavouriteDetails", "Displaying ${faveBurrito.title} burritos")
     }
-
+    val context = LocalContext.current
     Scaffold(
         bottomBar = {
             BottomAppBar { // This is your bottom bar
@@ -201,7 +186,12 @@ fun FavouriteDetails(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Spacer(Modifier.weight(1f)) // This spacer pushes the button to the right
-                    Button(onClick = { /* TODO: Implement order functionality */ }) {
+                    Button(onClick = { viewModel.addFavoriteToOrder()
+                        Toast.makeText(
+                            context,
+                            "'${viewModel.faveBurrito?.title}' added to order",
+                            Toast.LENGTH_SHORT //can also specify Toast.LENGTH_LONG
+                        ).show()}) {
                         Text("Add to order")
                     }
                 }

@@ -59,4 +59,14 @@ class BurritoViewModel : ViewModel()  {
 
         _uiState.value = OrderUIState()
     }
+    fun addFavoriteToOrder() {
+        val favorite = _favoriteBurrito
+        if (favorite != null) {
+            Log.d("BurritoViewModel", "Adding favorite burrito to order: ${favorite.title}")
+            val updatedBurritos = _uiState.value.burritos + favorite
+            _uiState.value = OrderUIState(updatedBurritos)
+        } else {
+            Log.d("BurritoViewModel", "No favorite burrito to add to order")
+        }
+    }
 }
