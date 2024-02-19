@@ -24,6 +24,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -93,6 +94,7 @@ fun OrderDetails(
     val uiState = viewModel.uiState.value
     Log.d("OrderDetails", "Displaying ${uiState.burritos.size} burritos")
 
+    val context = LocalContext.current
     Scaffold(
         bottomBar = {
             BottomAppBar { // This is your bottom bar
@@ -104,7 +106,7 @@ fun OrderDetails(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Spacer(Modifier.weight(1f)) // This spacer pushes the button to the right
-                    Button(onClick = { /* TODO: Implement order functionality */ }) {
+                    Button(onClick = { viewModel.resetOrderAndWriteToFile(context) }) {
                         Text("Place Order")
                     }
                 }
@@ -148,9 +150,29 @@ fun FavouriteDetails(
     if (faveBurrito != null) {
         Log.d("FavouriteDetails", "Displaying ${faveBurrito.title} burritos")
     }
-    Column {
-        if (faveBurrito != null) {
-            Text(faveBurrito.title)
+
+    Scaffold(
+        bottomBar = {
+            BottomAppBar { // This is your bottom bar
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    horizontalArrangement = Arrangement.End,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Spacer(Modifier.weight(1f)) // This spacer pushes the button to the right
+                    Button(onClick = { /* TODO: Implement order functionality */ }) {
+                        Text("Add to order")
+                    }
+                }
+            }
+        }
+    ) { innerPadding ->
+        Column {
+            if (faveBurrito != null) {
+                Text(faveBurrito.title)
+            }
         }
     }
 }
