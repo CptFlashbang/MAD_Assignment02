@@ -52,10 +52,9 @@ fun Order_Screen(
         ) {
             when (selectedTabIndex) {
                 0 -> OrderDetails(viewModelTest)
-                1 -> FavouriteDetails(viewModelTest)
-                2 -> Text("Content of Tab 3")
+                1 -> Text("Content of Tab 2")
+                2 -> FavouriteDetails(viewModelTest)
             }
-
         }
     }
 }
@@ -66,7 +65,7 @@ fun TopTabs(selectedTabIndex: Int, onSelectTab: (Int) -> Unit) {
         Tab(
             selected = selectedTabIndex == 0,
             onClick = { onSelectTab(0) },
-            text = { Text("Tab 1") }
+            text = { Text("Current Order") }
         )
         Tab(
             selected = selectedTabIndex == 1,
@@ -76,7 +75,7 @@ fun TopTabs(selectedTabIndex: Int, onSelectTab: (Int) -> Unit) {
         Tab(
             selected = selectedTabIndex == 2,
             onClick = { onSelectTab(2) },
-            text = { Text("Tab 3") }
+            text = { Text("Favourite") }
         )
     }
 }
