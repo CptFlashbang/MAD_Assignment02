@@ -157,7 +157,17 @@ fun Custom_Screen() {
             TopAppBar(
                 title = { Text("Build-a-Burrito") },
                 actions = {
-                    IconButton(onClick = { /* Handle navigation icon click */ }) {
+                    IconButton(onClick = {
+                        val customBurrito = BurritoClass(
+                            title = burritoName.value,
+                            mainFilling = selectedMainFilling.value,
+                            additionalFillings = selectedAdditionalFillings.value,
+                            sauces = selectedSauces.value,
+                            salads = selectedSalads.value,
+                            price = 3.00,
+                        )
+                        viewModel.addToOrder(customBurrito)
+                    }) {
                         Icon(
                             imageVector = ImageVector.vectorResource(id = R.drawable.add_shopping_cart_fill0_wght400_grad0_opsz24),
                             contentDescription = "Add to cart action Icon"
