@@ -61,8 +61,8 @@ object DataSource {
     val ReadyMadeBurritos = arrayListOf(
             BurritoClass.createReadyMade(
                 1,
-                R.string.Pre_Made_01,
-                R.string.Pre_Made_01_Description,
+                "Mango Tango",
+                "R.string.Pre_Made_01_Description",
                 8.99,
                 R.string.Main_Filling_01,
                 listOf(R.string.Additional_Filling_01),
@@ -71,8 +71,8 @@ object DataSource {
             ),
             BurritoClass.createReadyMade(
                 2,
-                R.string.Pre_Made_02,
-                R.string.Pre_Made_02_Description,
+                "Sizzling Southwest Steak",
+                "R.string.Pre_Made_02_Description",
                 9.99,
                 R.string.Main_Filling_02,
                 listOf(R.string.Additional_Filling_02),
@@ -81,8 +81,8 @@ object DataSource {
             ),
             BurritoClass.createReadyMade(
                 3,
-                R.string.Pre_Made_03,
-                R.string.Pre_Made_03_Description,
+                "Vegan Fiesta",
+                "R.string.Pre_Made_03_Description",
                 7.99,
                 R.string.Main_Filling_03,
                 listOf(R.string.Additional_Filling_03),
@@ -91,8 +91,8 @@ object DataSource {
             ),
             BurritoClass.createReadyMade(
                 4,
-                R.string.Pre_Made_04,
-                R.string.Pre_Made_04_Description,
+                "Thai-inspired Shrimp",
+                "R.string.Pre_Made_04_Description",
                 10.99,
                 R.string.Main_Filling_04,
                 listOf(R.string.Additional_Filling_04),
@@ -101,8 +101,8 @@ object DataSource {
             ),
             BurritoClass.createReadyMade(
                 5,
-                R.string.Pre_Made_05,
-                R.string.Pre_Made_05_Description,
+                "Mediterranean Chickpea",
+                "R.string.Pre_Made_05_Description",
                 8.49,
                 R.string.Main_Filling_05,
                 listOf(R.string.Additional_Filling_05),
@@ -111,8 +111,8 @@ object DataSource {
             ),
             BurritoClass.createReadyMade(
                 6,
-                R.string.Pre_Made_06,
-                R.string.Pre_Made_06_Description,
+                "Hawaiian Luau Pork",
+                "R.string.Pre_Made_06_Description",
                 11.49,
                 R.string.Main_Filling_06,
                 listOf(R.string.Additional_Filling_06),
@@ -121,8 +121,8 @@ object DataSource {
             ),
             BurritoClass.createReadyMade(
                 7,
-                R.string.Pre_Made_07,
-                R.string.Pre_Made_07_Description,
+                "Buffalo Chicken Blue Cheese",
+               "R.string.Pre_Made_07_Description",
                 9.79,
                 R.string.Main_Filling_07,
                 listOf(R.string.Additional_Filling_08),
@@ -131,8 +131,8 @@ object DataSource {
             ),
             BurritoClass.createReadyMade(
                 8,
-                R.string.Pre_Made_08,
-                R.string.Pre_Made_08_Description,
+                "Tex-Mex Brisket Bonanza",
+                "R.string.Pre_Made_08_Description",
                 11.99,
                 R.string.Main_Filling_08,
                 listOf(R.string.Additional_Filling_07),
@@ -141,8 +141,8 @@ object DataSource {
             ),
             BurritoClass.createReadyMade(
                 9,
-                R.string.Pre_Made_09,
-                R.string.Pre_Made_09_Description,
+                "Mediterranean Lamb Delight",
+                "R.string.Pre_Made_09_Description",
                 10.49,
                 R.string.Main_Filling_09,
                 listOf(R.string.Additional_Filling_05),
@@ -151,8 +151,8 @@ object DataSource {
             ),
             BurritoClass.createReadyMade(
                 10,
-                R.string.Pre_Made_10,
-                R.string.Pre_Made_10_Description,
+                "Sweet Potato and Black Bean",
+                "R.string.Pre_Made_10_Description",
                 8.29,
                 R.string.Main_Filling_10,
                 listOf(R.string.Additional_Filling_01),
@@ -162,9 +162,9 @@ object DataSource {
         )
     }
 data class BurritoClass(
-    val id: Int,
-    @StringRes val title: Int,
-    @StringRes val description: Int,
+    val id: Int? = null,
+    val title: String,
+    val description: String?  = null,
     val price: Double,
     val mainFilling: Int,
     val additionalFillings: List<Int>,
@@ -174,8 +174,8 @@ data class BurritoClass(
     companion object {
         fun createReadyMade(
             id: Int,
-            @StringRes title: Int,
-            @StringRes description: Int,
+            title: String,
+            description: String,
             price: Double,
             mainFilling: Int,
             additionalFillings: List<Int>,
