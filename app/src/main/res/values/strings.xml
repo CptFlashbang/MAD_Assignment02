@@ -70,4 +70,16 @@
     <string name="Salad_08">Celery slaw</string>
     <string name="Salad_09">Corn</string>
     <string name="Salad_10">Spinach</string>
+
+    <string name="HomeScreenSectionTitle1">Welcome to Barrys Burritos - A Taste Adventure Awaits!</string>
+    <string name="HomeScreenSection1">Nestled in the heart of the vibrant community near Stoke-on-Trent, Barrys Burritos invites you on a culinary journey like no other. </string>
+    <string name="HomeScreenSection2">Our specialty? Crafting mouth-watering burritos filled with unique flavors and the freshest ingredients.</string>
+    <string name="HomeScreenSection3">From our signature spicy pulled pork to our vegetarian delights, each burrito is an explosion of taste, wrapped in tradition and innovation. Join us and savor the flavor of passion in every bite!</string>
+    <string name="HomeScreenSectionTitle2">More Than Just a Burrito Bar</string>
+    <string name="HomeScreenSubSectionTitle1">Our Journey:</string>
+    <string name="HomeScreenSection4">Founded in 2010 by culinary enthusiast Barry Smith, our humble beginnings were rooted in a small kitchen near Stoke-on-Trent. </string>
+    <string name="HomeScreenSection5">What started as a passion for Mexican cuisine has now blossomed into a local favorite, known for its unique twist on the classic burrito.</string>
+    <string name="HomeScreenSubSectionTitle2">Our Mission:</string>
+    <string name="HomeScreenSection6">At Barrys Burritos, our mission is simple: to provide a memorable dining experience that delights the taste buds and warms the soul.</string>
+    <string name="HomeScreenSection7">We believe in the power of food to bring people together, creating moments of joy and culinary adventure.</string>
 </resources>
