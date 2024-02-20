@@ -216,11 +216,15 @@ fun Custom_Screen(
                 }
             )
          },
-//        bottomBar = {
-//            Button(onClick = { /* TODO: Add action for button click */ }) {
-//                Text("Add to Order")
-//            }
-//        },
+        bottomBar = {
+            DisplayPrice(
+                CalculatePrice(
+                    selectedAdditionalFillings.value,
+                    selectedSauces.value,
+                    selectedSalads.value
+                )
+            )
+        },
     )
     { innerPadding ->
         LazyColumn(modifier = Modifier.padding(innerPadding)) {
