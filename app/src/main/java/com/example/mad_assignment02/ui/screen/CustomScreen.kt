@@ -276,12 +276,12 @@ fun ExpandableSection(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
+            .clickable { expanded = !expanded }
+            .padding(8.dp),
     ) {
         Row(
             modifier = Modifier
-                .fillMaxWidth()
-                .clickable { expanded = !expanded },
+                .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
