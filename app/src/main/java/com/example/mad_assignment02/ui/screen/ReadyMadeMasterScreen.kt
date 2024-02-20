@@ -57,6 +57,7 @@ fun ReadyMadeList(readyMadeBurritos:List<BurritoClass>, navController: NavHostCo
 @Composable
 fun Ready_Made_Master_Screen(navController: NavHostController){
     Scaffold(
+        modifier = Modifier.padding(horizontal = 16.dp),
     ) { innerPadding ->
         Column(
             modifier = Modifier
