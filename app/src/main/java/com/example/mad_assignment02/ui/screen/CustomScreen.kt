@@ -104,9 +104,8 @@ fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableSta
 }
 
 @Composable
-fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableList<Int>, title: String) {
+fun AdditionalItemsSection(items: List<Int>, selectedItems: MutableList<Int>) {
     Column {
-        Text(title)
         items.forEach { itemId ->
             // Remember the checked state for each item
             val isChecked = remember { mutableStateOf(itemId in selectedItems) }
