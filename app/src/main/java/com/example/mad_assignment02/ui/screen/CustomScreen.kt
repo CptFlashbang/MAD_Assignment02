@@ -226,7 +226,12 @@ fun Custom_Screen(
         },
     )
     { innerPadding ->
-        LazyColumn(modifier = Modifier.padding(innerPadding)) {
+        LazyColumn(
+            modifier = Modifier
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
             item { BurritoNameField(burritoName) }
 
             item {
