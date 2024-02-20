@@ -84,7 +84,6 @@ fun MainFillingListItem(fillingText: String, isSelected: Boolean, onSelect: () -
 @Composable
 fun MainFillingsSection(mainFillings: List<Int>, selectedMainFilling: MutableState<Int>) {
     Column {
-        Text("Select Main Filling")
         mainFillings.forEach { fillingId ->
             val fillingText = stringResource(fillingId)
             ListItem(
@@ -240,32 +239,31 @@ fun Custom_Screen(
                 }
             }
 
+            item { Divider() }
+
             item {
                 ExpandableSection(title = "Additional Fillings") {
-                    AdditionalItemsSection(additional_fillings, selectedAdditionalFillings.value, "Additional Fillings")
+                    AdditionalItemsSection(additional_fillings, selectedAdditionalFillings.value)
                 }
             }
+
+            item { Divider() }
 
             item {
                 ExpandableSection(title = "Sauces") {
-                    AdditionalItemsSection(sauces, selectedSauces.value, "Sauces")
+                    AdditionalItemsSection(sauces, selectedSauces.value)
                 }
             }
 
+            item { Divider() }
+
             item {
                 ExpandableSection(title = "Salads") {
-                    AdditionalItemsSection(salads, selectedSalads.value, "Salads")
+                    AdditionalItemsSection(salads, selectedSalads.value)
                 }
             }
-            item {
-                DisplayPrice(
-                    CalculatePrice(
-                        selectedAdditionalFillings.value,
-                        selectedSauces.value,
-                        selectedSalads.value
-                    )
-                )
-            }
+
+            item { Divider() }
         }
     }
 }
