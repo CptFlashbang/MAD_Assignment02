@@ -58,7 +58,7 @@ fun LazyColumnExample() {
 
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         item {
-            Image(painter = painterResource(id = R.drawable.sangria_senorial_ah2fCJP9Eok_unsplash), contentDescription = "Sangria Image")
+            Image(painter = painterResource(id = R.drawable.burrito_hero), contentDescription = "Sangria Image")
         }
         items(stringIds) { stringId ->
             Text(text = stringResource(id = stringId))
