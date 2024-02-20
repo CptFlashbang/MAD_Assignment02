@@ -1,5 +1,5 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class,
-    ExperimentalMaterial3Api::class
+    ExperimentalMaterial3Api::class, ExperimentalMaterial3WindowSizeClassApi::class
 )
 
 package com.example.mad_assignment02
@@ -7,6 +7,8 @@ package com.example.mad_assignment02
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -20,6 +22,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
+import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -32,6 +37,7 @@ import androidx.navigation.navArgument
 import com.example.mad_assignment02.data.DataSource.ReadyMadeBurritos
 import com.example.mad_assignment02.ui.BurritoViewModel
 import com.example.mad_assignment02.ui.component.BottomNavBar
+import com.example.mad_assignment02.ui.component.NavRail
 import com.example.mad_assignment02.ui.screen.Custom_Screen
 import com.example.mad_assignment02.ui.screen.Home_Screen
 import com.example.mad_assignment02.ui.screen.Order_Screen
@@ -46,17 +52,24 @@ enum class BurritoScreen() {
     Custom,
     Order
 }
+enum class NavigationType {
+    BOTTOM_NAVIGATION,
+    NAVIGATION_RAIL,
+    PERMANENT_NAVIGATION_DRAWER
+}
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MAD_Assignment02Theme {
+                val windowSize = calculateWindowSizeClass(this)
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.surface
                 ) {
-                    BurritoApp()
+                    BurritoApp(windowSize = windowSize.widthSizeClass)
                 }
             }
         }
@@ -64,58 +77,73 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun BurritoApp(
+    windowSize: WindowWidthSizeClass,
     navController: NavHostController = rememberNavController()
 ) {
+    val navigationType = when (windowSize) {
+        WindowWidthSizeClass.Compact -> { NavigationType.BOTTOM_NAVIGATION }
+        WindowWidthSizeClass.Medium -> { NavigationType.NAVIGATION_RAIL }
+        else -> { NavigationType.BOTTOM_NAVIGATION }
+    }
+
     val viewModelTest: BurritoViewModel = viewModel()
     Scaffold(
         bottomBar = {
-            BottomAppBar(
-            ) {
-                BottomNavBar(navController)
+            AnimatedVisibility(visible = navigationType == NavigationType.BOTTOM_NAVIGATION){
+                BottomAppBar(
+                ) {
+                    BottomNavBar(navController)
+                }
             }
         },
     ) { innerPadding ->
-        NavHost(
-            navController = navController,
-            startDestination = BurritoScreen.Home.name,
-            modifier = Modifier.padding(innerPadding)
-        ) {
-            composable(route = BurritoScreen.Home.name) {
-                Home_Screen()
+        Row {
+            AnimatedVisibility(visible = navigationType == NavigationType.NAVIGATION_RAIL) {
+                NavRail(navController)
             }
-            composable(route = BurritoScreen.ReadyMadeMaster.name) {
-                Ready_Made_Master_Screen(navController)
-            }
-            composable(
-                //userId is placeholder for profileDetails composable
-                route = "ReadyMadeBurritos/{id}",
+            NavHost(
+                navController = navController,
+                startDestination = BurritoScreen.Home.name,
+                modifier = Modifier.padding(innerPadding)
+            ) {
+                composable(route = BurritoScreen.Home.name) {
+                    Home_Screen()
+                }
+                composable(route = BurritoScreen.ReadyMadeMaster.name) {
+                    Ready_Made_Master_Screen(navController)
+                }
+                composable(
+                    //userId is placeholder for profileDetails composable
+                    route = "ReadyMadeBurritos/{id}",
 
-                //arguments accepts list of objects created by navArgument()
-                arguments = listOf(navArgument("id") {
-                    type = NavType.IntType
-                })
-            )
-            { navBackStackEntry ->
-                Ready_Made_Detail_Screen(
-                    //navBackStackEntry used to extract userId from route
-                    navBackStackEntry.arguments!!.getInt("id"),
-                    navController,
-                    viewModelTest,
-                    navigateUp = { navController.navigateUp() }
+                    //arguments accepts list of objects created by navArgument()
+                    arguments = listOf(navArgument("id") {
+                        type = NavType.IntType
+                    })
                 )
-            }
+                { navBackStackEntry ->
+                    Ready_Made_Detail_Screen(
+                        //navBackStackEntry used to extract userId from route
+                        navBackStackEntry.arguments!!.getInt("id"),
+                        navController,
+                        viewModelTest,
+                        navigateUp = { navController.navigateUp() }
+                    )
+                }
 
-            composable(route = BurritoScreen.Custom.name) {
-                Custom_Screen(
-                    viewModelTest,
-                )
-            }
-            composable(route = BurritoScreen.Order.name) {
-                Order_Screen(
-                    viewModelTest
-                )
+                composable(route = BurritoScreen.Custom.name) {
+                    Custom_Screen(
+                        viewModelTest,
+                    )
+                }
+                composable(route = BurritoScreen.Order.name) {
+                    Order_Screen(
+                        viewModelTest
+                    )
+                }
             }
         }
+
     }
 }
 
