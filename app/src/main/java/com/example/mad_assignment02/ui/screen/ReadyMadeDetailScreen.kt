@@ -3,21 +3,28 @@
 package com.example.mad_assignment02.ui.screen
 
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBack
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
@@ -33,7 +40,7 @@ fun Ready_Made_Detail_Screen(
     navHostController: NavHostController,
     viewModel: BurritoViewModel,
     navigateUp: () -> Unit = {},
-    ){
+    ) {
 //    val burrito = ReadyMadeBurritos.first { burrito ->
 //        burrito.id == burritoId
 //    val viewModel: BurritoViewModel = viewModel()
@@ -77,7 +84,8 @@ fun Ready_Made_Detail_Screen(
                             context,
                             "'${burrito.title}' saved as favourite",
                             Toast.LENGTH_SHORT //can also specify Toast.LENGTH_LONG
-                        ).show()}) {
+                        ).show()
+                    }) {
                         Icon(
                             imageVector = ImageVector.vectorResource(id = R.drawable.favorite_fill0_wght400_grad0_opsz24),
                             contentDescription = "Add to favourite action Icon"
@@ -87,32 +95,93 @@ fun Ready_Made_Detail_Screen(
             )
         },
     ) { innerPadding ->
-        Column(
+        LazyColumn(
             modifier = Modifier
-                .padding(innerPadding),
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Text(text = burrito.description.toString())
-            Text(text = "Price: ${burrito.price}")
-            Text(text = "Main Filling: " + stringResource(burrito.mainFilling))
-
-            // Additional Fillings
-            Text(text = "Additional Fillings: ")
-            burrito.additionalFillings.forEach { filling ->
-                Text(text = stringResource(filling))
+//            Text(text = burrito.description.toString())
+//            Text(text = "Price: ${burrito.price}")
+//            Text(text = "Main Filling: " + stringResource(burrito.mainFilling))
+            item {
+                Image(
+                    painter = painterResource(id = R.drawable.burrito_hero),
+                    contentDescription = "Sangria Image",
+                    modifier = Modifier.clip(RoundedCornerShape(28.dp))
+                )
             }
 
-            // Sauces
-            Text(text = "Sauces: ")
-            burrito.sauces.forEach { sauce ->
-                Text(text = stringResource(sauce))
+            item { Divider() }
+
+            item {
+                Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                    Text(text = "Description", style = MaterialTheme.typography.headlineSmall)
+                    Text(
+                        text = burrito.description.toString(),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
             }
 
-            // Salads
-            Text(text = "Salads: ")
-            burrito.salads.forEach { salad ->
-                Text(text = stringResource(salad))
+            item { Divider() }
+
+            item {
+                Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                    Text(text = "Main Filling:", style = MaterialTheme.typography.headlineSmall)
+                    Text(
+                        text = stringResource(burrito.mainFilling),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
             }
+
+            item { Divider() }
+
+            item {
+                Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                    Text(
+                        text = "Additional Fillings:",
+                        style = MaterialTheme.typography.headlineSmall
+                    )
+                    burrito.additionalFillings.forEach { filling ->
+                        Text(
+                            text = stringResource(filling),
+                            style = MaterialTheme.typography.bodyMedium
+                        )
+                    }
+                }
+            }
+
+            item { Divider() }
+
+            item {
+                Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                    Text(text = "Sauces:", style = MaterialTheme.typography.headlineSmall)
+                    burrito.sauces.forEach { sauce ->
+                        Text(
+                            text = stringResource(sauce),
+                            style = MaterialTheme.typography.bodyMedium
+                        )
+                    }
+                }
+            }
+
+            item { Divider() }
+
+            item {
+                Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                    Text(text = "Salads:", style = MaterialTheme.typography.headlineSmall)
+                    burrito.salads.forEach { salad ->
+                        Text(
+                            text = stringResource(salad),
+                            style = MaterialTheme.typography.bodyMedium
+                        )
+                    }
+                }
+            }
+
         }
     }
 }
+
