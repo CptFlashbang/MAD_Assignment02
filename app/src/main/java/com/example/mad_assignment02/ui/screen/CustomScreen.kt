@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
@@ -37,6 +38,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -215,13 +217,13 @@ fun Custom_Screen(
             )
          },
         bottomBar = {
-            DisplayPrice(
-                CalculatePrice(
-                    selectedAdditionalFillings.value,
-                    selectedSauces.value,
-                    selectedSalads.value
-                )
-            )
+//            DisplayPrice(
+//                CalculatePrice(
+//                    selectedAdditionalFillings.value,
+//                    selectedSauces.value,
+//                    selectedSalads.value
+//                )
+//            )
         },
     )
     { innerPadding ->
@@ -264,6 +266,16 @@ fun Custom_Screen(
             }
 
             item { Divider() }
+
+            item {
+                DisplayPrice(
+                    CalculatePrice(
+                        selectedAdditionalFillings.value,
+                        selectedSauces.value,
+                        selectedSalads.value
+                    )
+                )
+            }
         }
     }
 }
@@ -290,10 +302,10 @@ fun ExpandableSection(
                 text = title,
                 modifier = Modifier.weight(1f)
             )
-//            Icon(
-//                imageVector = if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
-//                contentDescription = if (expanded) "Collapse" else "Expand"
-//            )
+            Icon(
+                painter = if (expanded) painterResource(id = R.drawable.expand_less_fill0_wght400_grad0_opsz24) else painterResource(id = R.drawable.expand_more_fill0_wght400_grad0_opsz24),
+                contentDescription = if (expanded) "Collapse" else "Expand"
+            )
         }
         if (expanded) {
             content()
